@@ -60,7 +60,7 @@ function App() {
               </Box>
               <Avatar
                 alt="Jules Hery"
-                src="./Apple_Avatar.png"
+                src="./assets/Apple_Avatar.png"
                 sx={{ width: 100, height: 100, marginRight: 3 }}
               ></Avatar>
             </Box>
