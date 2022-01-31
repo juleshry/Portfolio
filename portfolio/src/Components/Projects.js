@@ -9,22 +9,19 @@ export class Projects extends React.Component {
     return (
       <Grid container>
         <Grid item>
-          <Project name="Clouds"></Project>
+          <Project name="Clouds" isLocal={true}></Project>
         </Grid>
         <Grid item>
-          <Project name="Alien_landscape"></Project>
+          <Project name="Alien_landscape" isLocal={true}></Project>
         </Grid>
         <Grid item>
-          <Project name="Circles"></Project>
+          <Project name="Circles" isLocal={true}></Project>
         </Grid>
         <Grid item>
-          <Project name="Rectangles"></Project>
+          <Project name="Rectangles" isLocal={true}></Project>
         </Grid>
         <Grid item>
-          <Project
-            name="Apso"
-            link="https://my.spline.design/apso2copy-01a016f685dbedeb6a5090d2535b4e39/"
-          ></Project>
+          <Project name="Apso" isLocal={false}></Project>
         </Grid>
       </Grid>
     );
