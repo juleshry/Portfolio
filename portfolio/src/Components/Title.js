@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 export class Title extends React.Component {
   render() {
     return (
-      <div style={{ "-webkit-user-select": "none" }}>
+      <div style={{ WebkitUserSelect: "none" }}>
         <Typography variant="h2" component="div" gutterBottom>
           THIS IS MY
         </Typography>
