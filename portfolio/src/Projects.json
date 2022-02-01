@@ -2,7 +2,7 @@
   "Clouds": {
     "Imagelink": "/assets/Clouds/Clouds.png",
     "Projectlink": "/assets/Clouds/Clouds.html",
-    "description": "A cloud created with a lot of dots  and using the noise function."
+    "description": "A cloud created with a lot of dots and using the noise function."
   },
   "Circles": {
     "Imagelink": "/assets/Circles/Circles.png",

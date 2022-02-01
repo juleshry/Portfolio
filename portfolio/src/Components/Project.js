@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
@@ -16,14 +16,30 @@ let ProjectsJson = require("./../Projects.json");
 export class Project extends React.Component {
   constructor(props) {
     super(props);
-    this.name = props.name;
-    this.imageUrl = ProjectsJson[this.name].Imagelink;
-    this.isLocal = props.isLocal;
-    this.projectUrl = this.isLocal
-      ? process.env.PUBLIC_URL + ProjectsJson[this.name].Projectlink
-      : (this.projectUrl = ProjectsJson[this.name].Projectlink);
-    this.description = ProjectsJson[this.name].description;
-    this.name = this.name.split("_").join(" ");
+
+    this.state = {
+      name: props.name.split("_").join(" "),
+      imageUrl: ProjectsJson[props.name].Imagelink,
+      isLocal: props.isLocal,
+      projectUrl: props.isLocal
+        ? process.env.PUBLIC_URL + ProjectsJson[props.name].Projectlink
+        : ProjectsJson[props.name].Projectlink,
+      description: ProjectsJson[props.name].description,
+    };
+  }
+
+  render() {
+    if (this.state.name.length >= 10 || this.state.description.length > 60)
+      return <LargeProject {...this.state} />;
+    else return <SmallProject {...this.state} />;
+  }
+}
+
+class LargeProject extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { ...props };
   }
 
   render() {
@@ -47,19 +63,19 @@ export class Project extends React.Component {
       >
         <CardMedia
           component="img"
-          image={process.env.PUBLIC_URL + this.imageUrl}
-          alt={this.name}
+          image={process.env.PUBLIC_URL + this.state.imageUrl}
+          alt={this.state.name}
           sx={{ width: 150 }}
         ></CardMedia>
         <CardContent>
           <ProjectText
-            name={this.name}
-            projectUrl={this.projectUrl}
-            description={this.description}
+            name={this.state.name}
+            projectUrl={this.state.projectUrl}
+            description={this.state.description}
           ></ProjectText>
         </CardContent>
         <Link
-          href={this.projectUrl}
+          href={this.state.projectUrl}
           style={{
             textDecoration: "none",
             color: "black",
@@ -91,3 +107,107 @@ export class Project extends React.Component {
     );
   }
 }
+
+const SmallProject = (props) => {
+  let state = { ...props };
+  const [isShown, setIsShown] = useState(false);
+
+  const handleShow = () => {
+    setIsShown(true);
+  };
+
+  const handleHide = () => {
+    setIsShown(false);
+  };
+
+  let style = {
+    position: "absolute",
+    backgroundColor: "rgba(0,0,0,0.6)",
+    width: 200,
+    height: "100%",
+    top: "0%",
+    transition: " 0.5s",
+    transitionTimingFunction: "cubic-bezier(0,.66,.66,.88)",
+  };
+  if (!isShown) {
+    style.transform = "translateY(100%)";
+  }
+
+  return (
+    <Card
+      onMouseEnter={() => handleShow()}
+      onMouseLeave={() => {
+        handleHide();
+      }}
+      sx={{
+        position: "relative",
+        display: "flex",
+        boxShadow: "10px 10px 10px rgba(30,30,30,0.1)",
+        borderLeft: "solid 1px rgba(255,255,255,0.3)",
+        borderTop: "solid 1px rgba(255,255,255,0.8)",
+        width: 200,
+        height: 200,
+        m: 1,
+        borderRadius: 5,
+        WebkitUserSelect: "none",
+      }}
+    >
+      <CardMedia
+        component="img"
+        image={process.env.PUBLIC_URL + state.imageUrl}
+        alt={state.name}
+      ></CardMedia>
+      <div className="Black-over" id="Black-over" style={style}>
+        <CardContent sx={{ color: "white", height: "85%", mr: 2 }}>
+          <div
+            className="Text-project"
+            style={{ position: "absolute", width: "75%", height: "84%" }}
+          >
+            <ProjectText
+              name={state.name}
+              projectUrl={state.projectUrl}
+              description={state.description}
+            ></ProjectText>
+          </div>
+          <div
+            style={{
+              position: "relative",
+              float: "right",
+              marginTop: "-10%",
+              marginRight: "-20%",
+            }}
+          >
+            <Link
+              href={state.projectUrl}
+              style={{
+                textDecoration: "none",
+              }}
+            >
+              <motion.div
+                whileHover={{
+                  rotate: -45,
+                  scale: 1.2,
+                }}
+                transition={{
+                  duration: 0.5,
+                  ease: "easeInOut",
+                }}
+              >
+                <ButtonBase style={{ margin: 7 }}>
+                  <ArrowForwardIcon
+                    sx={{
+                      color: "#fff",
+                      border: 2,
+                      borderRadius: 25,
+                      borderWidth: 2,
+                    }}
+                  ></ArrowForwardIcon>
+                </ButtonBase>
+              </motion.div>
+            </Link>
+          </div>
+        </CardContent>
+      </div>
+    </Card>
+  );
+};

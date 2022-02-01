@@ -20,14 +20,25 @@ export class ProjectText extends React.Component {
         flexDirection="column"
         justifyContent="space-between"
         m={1}
+        height="100%"
         alignItems="start"
       >
-        <Typography variant="h4">{this.name}</Typography>
-        <hr />
-
-        <Typography gutterBottom style={{ alignItems: "flex-end", bottom: 0 }}>
-          {this.description}
+        <Typography variant="h4" style={{ top: 0 }}>
+          {this.name}
         </Typography>
+        <div style={{ bottom: 0 }}>
+          <Typography
+            gutterBottom
+            style={{
+              alignItems: "end",
+              bottom: 0,
+              textAlign: "justify",
+              textJustify: "auto",
+            }}
+          >
+            {this.description}
+          </Typography>
+        </div>
       </Box>
     );
   }
