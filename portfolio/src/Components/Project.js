@@ -47,11 +47,11 @@ class LargeProject extends React.Component {
       <Card
         sx={{
           display: "flex",
-          backgroundColor: "rgba(230,230,230,0.5)",
+          backgroundColor: "rgba(230,230,230,0.1)",
           backgroundImage:
             "linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0))",
-          backdropFilter: "blur(7px)",
-          boxShadow: "10px 10px 10px rgba(30,30,30,0.1)",
+          backdropFilter: "blur(10px)",
+          boxShadow: "10px 10px 10px rgba(0, 0, 0, .2)",
           borderLeft: "solid 1px rgba(255,255,255,0.3)",
           borderTop: "solid 1px rgba(255,255,255,0.8)",
           width: 428,
@@ -123,14 +123,26 @@ const SmallProject = (props) => {
   let style = {
     position: "absolute",
     backgroundColor: "rgba(0,0,0,0.6)",
+    backgroundImage:
+      "linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0))",
+    borderRadius: 15,
     width: 200,
     height: "100%",
     top: "0%",
     transition: " 0.5s",
     transitionTimingFunction: "cubic-bezier(0,.66,.66,.88)",
   };
+  let style2 = {
+    filter: "",
+    transition: "1s",
+    transitionTimingFunction: "cubic-bezier(.51,.2,.36,.97)",
+  };
   if (!isShown) {
     style.transform = "translateY(100%)";
+    style2.filter = "";
+    style2.transitionTimingFunction = "cubic-bezier(0,.55,.36,.97)";
+  } else {
+    style2.filter = "blur(5px)";
   }
 
   return (
@@ -142,7 +154,7 @@ const SmallProject = (props) => {
       sx={{
         position: "relative",
         display: "flex",
-        boxShadow: "10px 10px 10px rgba(30,30,30,0.1)",
+        boxShadow: "10px 10px 10px rgba(0, 0, 0, .2)",
         borderLeft: "solid 1px rgba(255,255,255,0.3)",
         borderTop: "solid 1px rgba(255,255,255,0.8)",
         width: 200,
@@ -156,6 +168,7 @@ const SmallProject = (props) => {
         component="img"
         image={process.env.PUBLIC_URL + state.imageUrl}
         alt={state.name}
+        style={style2}
       ></CardMedia>
       <div className="Black-over" id="Black-over" style={style}>
         <CardContent sx={{ color: "white", height: "85%", mr: 2 }}>
