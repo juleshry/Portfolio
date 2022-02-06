@@ -22,34 +22,34 @@ const theme = responsiveFontSizes(
 );
 
 function App() {
+  let appBarStyle = {
+    position: "static",
+    color: "#000",
+    backgroundColor: "rgba(230,230,230,0)",
+    backgroundImage:
+      "linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0))",
+    backdropFilter: "blur(10px)",
+    boxShadow: "2px 2px 2px rgba(0, 0, 0, 0.1)",
+    WebkitUserSelect: "none",
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <div>
-          <AppBar
-            position="sticky"
-            style={{
-              color: "#000",
-              boxShadow: "none",
-              background: "rgb(255,255,255)",
-              background:
-                "linear-gradient(150deg, rgba(255,255,255,1) 0%, rgba(180,180,250,1) 96%)",
-              WebkitUserSelect: "none",
-            }}
+        <AppBar style={appBarStyle}>
+          <Box
+            display="flex"
+            flexDirection="row"
+            justifyContent="space-between"
+            m={1}
+            alignItems="center"
           >
-            <Box
-              display="flex"
-              flexDirection="row"
-              justifyContent="space-between"
-              m={1}
-              alignItems="center"
-            >
-              <Title />
-              <MyAvatar />
-            </Box>
-            <Divider />
-          </AppBar>
-        </div>
+            <Title />
+            <MyAvatar />
+          </Box>
+          <Divider />
+        </AppBar>
+
         <Projects />
       </div>
     </ThemeProvider>

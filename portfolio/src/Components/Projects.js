@@ -7,7 +7,7 @@ import { Project } from "./Project";
 export class Projects extends React.Component {
   render() {
     return (
-      <Grid container>
+      <Grid container margin="auto" width="90%">
         <Grid item>
           <Project name="Clouds" isLocal={true}></Project>
         </Grid>

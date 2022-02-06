@@ -1,17 +1,12 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 
-export class Title extends React.Component {
-  render() {
-    return (
-      <div style={{ WebkitUserSelect: "none" }}>
-        <Typography variant="h2" component="div" gutterBottom>
-          THIS IS MY
-        </Typography>
-        <Typography variant="h2" component="div" gutterBottom>
-          PORTFOLIO
-        </Typography>
-      </div>
-    );
-  }
-}
+export const Title = () => {
+  return (
+    <div style={{ WebkitUserSelect: "none" }}>
+      <Typography variant="h2" component="div" gutterBottom>
+        THIS IS MY <br /> PORTFOLIO
+      </Typography>
+    </div>
+  );
+};

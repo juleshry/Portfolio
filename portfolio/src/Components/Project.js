@@ -40,6 +40,7 @@ class LargeProject extends React.Component {
     super(props);
 
     this.state = { ...props };
+    this.state.width = 428;
   }
 
   render() {
@@ -51,10 +52,10 @@ class LargeProject extends React.Component {
           backgroundImage:
             "linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0))",
           backdropFilter: "blur(10px)",
-          boxShadow: "10px 10px 10px rgba(0, 0, 0, .2)",
+          boxShadow: "2px 2px 2px rgba(0, 0, 0, .2)",
           borderLeft: "solid 1px rgba(255,255,255,0.3)",
           borderTop: "solid 1px rgba(255,255,255,0.8)",
-          width: 428,
+          maxWidth: this.state.width,
           height: 200,
           m: 1,
           borderRadius: 5,
@@ -154,7 +155,7 @@ const SmallProject = (props) => {
       sx={{
         position: "relative",
         display: "flex",
-        boxShadow: "10px 10px 10px rgba(0, 0, 0, .2)",
+        boxShadow: "2px 2px 2px rgba(0, 0, 0, .2)",
         borderLeft: "solid 1px rgba(255,255,255,0.3)",
         borderTop: "solid 1px rgba(255,255,255,0.8)",
         width: 200,
