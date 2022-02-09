@@ -2,7 +2,6 @@ import React from "react";
 
 import { Box } from "@material-ui/core";
 import { Typography } from "@material-ui/core";
-import Divider from "@mui/material/Divider";
 
 export class ProjectText extends React.Component {
   constructor(props) {
@@ -14,6 +13,8 @@ export class ProjectText extends React.Component {
   }
 
   render() {
+    //if (this.name.split(" ").length > 1)
+    //this.name = this.name.split(" ")[0] + " ...";
     return (
       <Box
         display="flex"
@@ -26,14 +27,17 @@ export class ProjectText extends React.Component {
         <Typography variant="h4" style={{ top: 0 }}>
           {this.name}
         </Typography>
-        <div style={{ bottom: 0 }}>
+        <div>
           <Typography
             gutterBottom
             style={{
               alignItems: "end",
-              bottom: 0,
+              paddingTop: 10,
               textAlign: "justify",
               textJustify: "auto",
+              overflowX: "hidden",
+              maxHeight: 110,
+              minWidth: 150,
             }}
           >
             {this.description}

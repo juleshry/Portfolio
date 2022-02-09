@@ -13,6 +13,9 @@ import { ProjectText } from "./ProjectText";
 
 let ProjectsJson = require("./../Projects.json");
 
+const LARGELENGTH = 428;
+const FORCESMALL = 500;
+
 export class Project extends React.Component {
   constructor(props) {
     super(props);
@@ -25,13 +28,33 @@ export class Project extends React.Component {
         ? process.env.PUBLIC_URL + ProjectsJson[props.name].Projectlink
         : ProjectsJson[props.name].Projectlink,
       description: ProjectsJson[props.name].description,
+      componentWidth: window.innerWidth,
     };
+
+    this.dimensions = { width: window.innerWidth, height: window.innerHeight };
   }
 
+  componentDidMount() {
+    window.addEventListener("resize", this.handleResize);
+  }
+
+  handleResize = () => {
+    console.log("resize " + window.innerWidth);
+    this.setState({ componentWidth: window.innerWidth });
+  };
+
   render() {
-    if (this.state.name.length >= 10 || this.state.description.length > 60)
-      return <LargeProject {...this.state} />;
-    else return <SmallProject {...this.state} />;
+    let ret =
+      (this.state.name.length >= 10 || this.state.description.length > 60) &&
+      this.state.componentWidth > FORCESMALL ? (
+        <LargeProject {...this.state} />
+      ) : (
+        <SmallProject {...this.state} />
+      );
+
+    console.log(this.state.componentWidth);
+
+    return ret;
   }
 }
 
@@ -40,7 +63,7 @@ class LargeProject extends React.Component {
     super(props);
 
     this.state = { ...props };
-    this.state.width = 428;
+    this.state.width = LARGELENGTH;
   }
 
   render() {
@@ -51,7 +74,7 @@ class LargeProject extends React.Component {
           backgroundColor: "rgba(230,230,230,0.1)",
           backgroundImage:
             "linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0))",
-          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
           boxShadow: "2px 2px 2px rgba(0, 0, 0, .2)",
           borderLeft: "solid 1px rgba(255,255,255,0.3)",
           borderTop: "solid 1px rgba(255,255,255,0.8)",
@@ -66,7 +89,7 @@ class LargeProject extends React.Component {
           component="img"
           image={process.env.PUBLIC_URL + this.state.imageUrl}
           alt={this.state.name}
-          sx={{ width: 150 }}
+          sx={{ width: "150px" }}
         ></CardMedia>
         <CardContent>
           <ProjectText

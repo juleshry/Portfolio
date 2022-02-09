@@ -16,7 +16,6 @@ const theme = responsiveFontSizes(
   createTheme({
     typography: {
       fontFamily: ["Sora", "Montserrat", "serif"].join(","),
-      "-webkit-user-select": "none",
     },
   })
 );
@@ -28,14 +27,14 @@ function App() {
     backgroundColor: "rgba(230,230,230,0)",
     backgroundImage:
       "linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0))",
-    backdropFilter: "blur(10px)",
+    WebkitBackdropFilter: "blur(10px)",
     boxShadow: "2px 2px 2px rgba(0, 0, 0, 0.1)",
     WebkitUserSelect: "none",
   };
 
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
+      <div className="App" style={{ overflowX: "hidden" }}>
         <AppBar style={appBarStyle}>
           <Box
             display="flex"
