@@ -2,7 +2,7 @@ import React from "react";
 
 import Grid from "@mui/material/Grid";
 
-import { Project } from "./Project";
+import { Project } from "./Projects/Project";
 
 export class Projects extends React.Component {
   render() {
