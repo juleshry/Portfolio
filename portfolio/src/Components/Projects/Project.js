@@ -21,8 +21,6 @@ export class Project extends React.Component {
       description: ProjectsJson[props.name].description,
       componentWidth: window.innerWidth,
     };
-
-    this.dimensions = { width: window.innerWidth, height: window.innerHeight };
   }
 
   componentDidMount() {

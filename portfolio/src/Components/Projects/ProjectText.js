@@ -7,14 +7,29 @@ export class ProjectText extends React.Component {
   constructor(props) {
     super(props);
 
-    this.name = props.name;
-    this.projectUrl = props.projectUrl;
-    this.description = props.description;
+    this.state = { ...props };
+    this.state.componentWidth =
+      Math.min(200, (window.innerWidth - 100) / 2) * (3 / 4);
+    this.state.componentHeight =
+      Math.min(200, (window.innerWidth - 100) / 2) * 0.55;
+  }
+
+  handleResize = () => {
+    this.setState({
+      componentWidth: Math.min(200, (window.innerWidth - 100) / 2) * (3 / 4),
+      componentHeight: Math.min(200, (window.innerWidth - 100) / 2) * 0.55,
+    });
+  };
+
+  componentDidMount() {
+    window.addEventListener("resize", this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
   }
 
   render() {
-    //if (this.name.split(" ").length > 1)
-    //this.name = this.name.split(" ")[0] + " ...";
     return (
       <Box
         display="flex"
@@ -25,7 +40,7 @@ export class ProjectText extends React.Component {
         alignItems="start"
       >
         <Typography variant="h4" style={{ top: 0 }}>
-          {this.name}
+          {this.state.name}
         </Typography>
         <div>
           <Typography
@@ -36,11 +51,11 @@ export class ProjectText extends React.Component {
               textAlign: "justify",
               textJustify: "auto",
               overflowX: "hidden",
-              maxHeight: 110,
-              minWidth: 150,
+              maxHeight: this.state.componentHeight,
+              width: this.state.componentWidth,
             }}
           >
-            {this.description}
+            {this.state.description}
           </Typography>
         </div>
       </Box>

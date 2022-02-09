@@ -3,13 +3,9 @@ import React from "react";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
-import { Link } from "@material-ui/core";
-import { ButtonBase } from "@material-ui/core";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-
-import { motion } from "framer-motion";
 
 import { ProjectText } from "./ProjectText";
+import { MyLink } from "../MyLink";
 
 const LARGELENGTH = 428;
 
@@ -53,35 +49,7 @@ export class LargeProject extends React.Component {
             description={this.state.description}
           ></ProjectText>
         </CardContent>
-        <Link
-          href={this.state.projectUrl}
-          style={{
-            textDecoration: "none",
-            color: "black",
-          }}
-        >
-          <motion.div
-            whileHover={{
-              rotate: -45,
-              scale: 1.2,
-            }}
-            transition={{
-              duration: 0.5,
-              ease: "easeInOut",
-            }}
-          >
-            <ButtonBase style={{ margin: 7 }}>
-              <ArrowForwardIcon
-                sx={{
-                  color: "#000",
-                  border: 2,
-                  borderRadius: 25,
-                  borderWidth: 2,
-                }}
-              ></ArrowForwardIcon>
-            </ButtonBase>
-          </motion.div>
-        </Link>
+        <MyLink {...this.state} color="black" />
       </Card>
     );
   }
