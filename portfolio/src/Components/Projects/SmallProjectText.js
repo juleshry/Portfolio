@@ -3,7 +3,7 @@ import React from "react";
 import { Box } from "@material-ui/core";
 import { Typography } from "@material-ui/core";
 
-export class ProjectText extends React.Component {
+export class SmallProjectText extends React.Component {
   constructor(props) {
     super(props);
 
@@ -37,6 +37,7 @@ export class ProjectText extends React.Component {
         justifyContent="space-between"
         m={1}
         height="100%"
+        width="100%"
         alignItems="start"
       >
         <Typography variant="h4" style={{ top: 0 }}>

@@ -4,7 +4,7 @@ import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 
-import { ProjectText } from "./ProjectText";
+import { SmallProjectText } from "./SmallProjectText";
 import { MyLink } from "../MyLink";
 
 export class SmallProject extends React.Component {
@@ -96,11 +96,11 @@ export class SmallProject extends React.Component {
               className="Text-project"
               style={{ position: "absolute", width: "75%", height: "84%" }}
             >
-              <ProjectText
+              <SmallProjectText
                 name={this.state.name}
                 projectUrl={this.state.projectUrl}
                 description={this.state.description}
-              ></ProjectText>
+              ></SmallProjectText>
             </div>
             <div
               style={{

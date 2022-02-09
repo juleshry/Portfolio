@@ -36,7 +36,7 @@ export class MyLink extends React.Component {
               sx={{
                 color: this.state.color,
                 border: 2,
-                borderRadius: 25,
+                borderRadius: 5,
                 borderWidth: 2,
               }}
             ></ArrowForwardIcon>

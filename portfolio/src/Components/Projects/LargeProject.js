@@ -4,17 +4,17 @@ import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 
-import { ProjectText } from "./ProjectText";
+import { LargeProjectText } from "./LargeProjectText";
 import { MyLink } from "../MyLink";
 
-const LARGELENGTH = 428;
+const LARGEWIDTH = 428;
 
 export class LargeProject extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = { ...props };
-    this.state.width = LARGELENGTH;
+    this.state.width = LARGEWIDTH;
   }
 
   render() {
@@ -30,6 +30,7 @@ export class LargeProject extends React.Component {
           borderLeft: "solid 1px rgba(255,255,255,0.3)",
           borderTop: "solid 1px rgba(255,255,255,0.8)",
           maxWidth: this.state.width,
+          width: this.state.width,
           height: 200,
           m: 1,
           borderRadius: 5,
@@ -43,11 +44,11 @@ export class LargeProject extends React.Component {
           sx={{ width: "150px" }}
         ></CardMedia>
         <CardContent>
-          <ProjectText
+          <LargeProjectText
             name={this.state.name}
             projectUrl={this.state.projectUrl}
             description={this.state.description}
-          ></ProjectText>
+          ></LargeProjectText>
         </CardContent>
         <MyLink {...this.state} color="black" />
       </Card>
