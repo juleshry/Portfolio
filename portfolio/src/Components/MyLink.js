@@ -19,6 +19,7 @@ export class MyLink extends React.Component {
         href={this.state.projectUrl}
         style={{
           textDecoration: "none",
+          height: 2,
         }}
       >
         <motion.div

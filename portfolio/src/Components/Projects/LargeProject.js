@@ -20,20 +20,21 @@ export class LargeProject extends React.Component {
   render() {
     return (
       <Card
-        sx={{
+        style={{
           display: "flex",
           backgroundColor: "rgba(230,230,230,0.1)",
           backgroundImage:
             "linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0))",
           WebkitBackdropFilter: "blur(10px)",
+          backdropFilter: "blur(10px)",
           boxShadow: "2px 2px 2px rgba(0, 0, 0, .2)",
           borderLeft: "solid 1px rgba(255,255,255,0.3)",
           borderTop: "solid 1px rgba(255,255,255,0.8)",
           maxWidth: this.state.width,
           width: this.state.width,
           height: 200,
-          m: 1,
-          borderRadius: 5,
+          margin: 5,
+          borderRadius: 15,
           WebkitUserSelect: "none",
         }}
       >
@@ -41,7 +42,10 @@ export class LargeProject extends React.Component {
           component="img"
           image={process.env.PUBLIC_URL + this.state.imageUrl}
           alt={this.state.name}
-          sx={{ width: "150px" }}
+          sx={{
+            width: "150px",
+            MozWindowDragging: false,
+          }}
         ></CardMedia>
         <CardContent>
           <LargeProjectText

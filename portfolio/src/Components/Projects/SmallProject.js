@@ -55,6 +55,7 @@ export class SmallProject extends React.Component {
       filter: "",
       transition: "1s",
       transitionTimingFunction: "cubic-bezier(.51,.2,.36,.97)",
+      width: this.state.componentWidth,
     };
     if (!this.state.isShown) {
       style.transform = "translateY(100%)";
@@ -71,16 +72,14 @@ export class SmallProject extends React.Component {
         onMouseLeave={() => {
           this.handleHide();
         }}
-        sx={{
+        style={{
           position: "relative",
           display: "flex",
           boxShadow: "2px 2px 2px rgba(0, 0, 0, .2)",
-          borderLeft: "solid 1px rgba(255,255,255,0.3)",
-          borderTop: "solid 1px rgba(255,255,255,0.8)",
           maxWidth: this.state.componentWidth,
           height: this.state.componentWidth,
-          m: 1,
-          borderRadius: 5,
+          margin: 5,
+          borderRadius: 15,
           WebkitUserSelect: "none",
         }}
       >

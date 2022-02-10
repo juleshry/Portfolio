@@ -4,12 +4,11 @@ import {
   createTheme,
   responsiveFontSizes,
 } from "@material-ui/core/styles";
-import Divider from "@mui/material/Divider";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 
 import { Title } from "./Components/Title";
-import { Projects } from "./Components/Projects";
+import { Tiles } from "./Components/Tiles";
 import { MyAvatar } from "./Components/MyAvatar";
 
 const theme = responsiveFontSizes(
@@ -22,19 +21,18 @@ const theme = responsiveFontSizes(
 
 function App() {
   let appBarStyle = {
-    position: "static",
+    position: "sticky",
     color: "#000",
-    backgroundColor: "rgba(230,230,230,0)",
-    backgroundImage:
-      "linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0))",
-    WebkitBackdropFilter: "blur(10px)",
-    boxShadow: "2px 2px 2px rgba(0, 0, 0, 0.1)",
+    paddingBottom: 10,
+    backgroundColor: "none",
+    background: "none",
+    boxShadow: "none",
     WebkitUserSelect: "none",
   };
 
   return (
     <ThemeProvider theme={theme}>
-      <div className="App" style={{ overflowX: "hidden" }}>
+      <div className="App" style={{ overflowX: "hidden", overflowY: "hidden" }}>
         <AppBar style={appBarStyle}>
           <Box
             display="flex"
@@ -46,10 +44,9 @@ function App() {
             <Title />
             <MyAvatar />
           </Box>
-          <Divider />
         </AppBar>
 
-        <Projects />
+        <Tiles />
       </div>
     </ThemeProvider>
   );
