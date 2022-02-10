@@ -34,8 +34,8 @@ export class MyLink extends React.Component {
         >
           <ButtonBase style={{ margin: 7 }}>
             <ArrowForwardIcon
+              className={this.state.className}
               sx={{
-                color: this.state.color,
                 border: 2,
                 borderRadius: 5,
                 borderWidth: 2,

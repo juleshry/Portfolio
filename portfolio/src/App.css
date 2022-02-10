@@ -1,0 +1,39 @@
+body.dark-theme {
+  background: rgb(176, 186, 255);
+  background: linear-gradient(
+    318deg,
+    rgba(129, 136, 205, 1) 0%,
+    rgba(84, 84, 255, 1) 30%,
+    rgb(29, 31, 80) 100%
+  );
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  transition-duration: 0.3s cubic-bezier(0, 0.68, 0.78, 0.65);
+}
+
+body.dark-theme header {
+  color: #fff;
+  transition: color 0.3s cubic-bezier(0, 0.68, 0.78, 0.65);
+}
+
+header {
+  color: #000;
+  transition: color 0.3s cubic-bezier(0, 0.68, 0.78, 0.65);
+}
+
+body.dark-theme .largeProject {
+  color: #fff;
+  transition: color 0.3s cubic-bezier(0, 0.68, 0.78, 0.65);
+}
+
+.largeProject {
+  color: #000;
+  transition: color 0.3s cubic-bezier(0, 0.68, 0.78, 0.65);
+}
+
+.smallProject {
+  color: #fff;
+}

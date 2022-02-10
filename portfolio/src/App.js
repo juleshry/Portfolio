@@ -22,7 +22,6 @@ const theme = responsiveFontSizes(
 function App() {
   let appBarStyle = {
     position: "sticky",
-    color: "#000",
     paddingBottom: 10,
     backgroundColor: "none",
     background: "none",
@@ -33,7 +32,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App" style={{ overflowX: "hidden", overflowY: "hidden" }}>
-        <AppBar style={appBarStyle}>
+        <AppBar id="appBar" style={appBarStyle}>
           <Box
             display="flex"
             flexDirection="row"

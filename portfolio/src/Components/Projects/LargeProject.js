@@ -34,7 +34,7 @@ export class LargeProject extends React.Component {
           width: this.state.width,
           height: 200,
           margin: 5,
-          borderRadius: 15,
+          borderRadius: 25,
           WebkitUserSelect: "none",
         }}
       >
@@ -54,7 +54,7 @@ export class LargeProject extends React.Component {
             description={this.state.description}
           ></LargeProjectText>
         </CardContent>
-        <MyLink {...this.state} color="black" />
+        <MyLink {...this.state} className="largeProject" />
       </Card>
     );
   }

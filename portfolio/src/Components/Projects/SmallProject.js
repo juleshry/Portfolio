@@ -44,7 +44,7 @@ export class SmallProject extends React.Component {
       backgroundColor: "rgba(0,0,0,0.6)",
       backgroundImage:
         "linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0))",
-      borderRadius: 15,
+      borderRadius: 25,
       width: this.state.componentWidth,
       height: "100%",
       top: "0%",
@@ -79,7 +79,7 @@ export class SmallProject extends React.Component {
           maxWidth: this.state.componentWidth,
           height: this.state.componentWidth,
           margin: 5,
-          borderRadius: 15,
+          borderRadius: 25,
           WebkitUserSelect: "none",
         }}
       >
@@ -109,7 +109,7 @@ export class SmallProject extends React.Component {
                 marginRight: "-20%",
               }}
             >
-              <MyLink {...this.state} color="white" />
+              <MyLink {...this.state} className="smallProject" />
             </div>
           </CardContent>
         </div>

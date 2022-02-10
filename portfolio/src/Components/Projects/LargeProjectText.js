@@ -21,12 +21,13 @@ export class LargeProjectText extends React.Component {
         width="100%"
         alignItems="start"
       >
-        <Typography variant="h4" style={{ top: 0 }}>
+        <Typography variant="h4" className="largeProject">
           {this.state.name}
         </Typography>
         <div>
           <Typography
             gutterBottom
+            className="largeProject"
             style={{
               alignItems: "end",
               paddingTop: 10,

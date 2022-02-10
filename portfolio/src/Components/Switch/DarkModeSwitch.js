@@ -13,14 +13,6 @@ export class DarkModeSwitch extends React.Component {
     this.state.componentWidth = Math.min(200, (window.innerWidth - 100) / 2);
   }
 
-  handleShow = () => {
-    this.setState({ isShown: true });
-  };
-
-  handleHide = () => {
-    this.setState({ isShown: false });
-  };
-
   handleResize = () => {
     this.setState({
       componentWidth: Math.min(200, (window.innerWidth - 100) / 2),
@@ -46,20 +38,23 @@ export class DarkModeSwitch extends React.Component {
           WebkitBackdropFilter: "blur(10px)",
           backdropFilter: "blur(10px)",
           boxShadow: "2px 2px 2px rgba(0, 0, 0, .2)",
-          borderLeft: "solid 1px rgba(255,255,255,0.3)",
+          borderLeft: "solid 1px rgba(255,255,255,0.8)",
           borderTop: "solid 1px rgba(255,255,255,0.8)",
           width: this.state.componentWidth,
           height: this.state.componentWidth,
           margin: 5,
-          borderRadius: 15,
+          borderRadius: 25,
           WebkitUserSelect: "none",
         }}
       >
         <CardContent style={{ margin: "auto", marginTop: "18%" }}>
           <Switch
             checked={this.state.toggled}
-            onChange={(e) => {
-              this.setState({ toggled: e.target.checked });
+            handleToggle={() => {
+              this.setState({ toggled: !this.state.toggled });
+              if (!this.state.toggled)
+                document.body.classList.toggle("dark-theme", true);
+              else document.body.classList.toggle("dark-theme", false);
             }}
           />
         </CardContent>
