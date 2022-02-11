@@ -10,6 +10,29 @@ export class Tiles extends React.Component {
     super(props);
 
     this.state = { ...props };
+    this.state.maxWidth =
+      window.innerWidth < 600
+        ? window.innerWidth - 30 + "px"
+        : window.innerWidth < 820
+        ? "550px"
+        : "700px";
+  }
+
+  handleResize = () => {
+    if (window.innerWidth < 600)
+      this.setState({ maxWidth: window.innerWidth - 30 + "px" });
+    else if (window.innerWidth < 820) this.setState({ maxWidth: "550px" });
+    else this.setState({ maxWidth: "700px" });
+    console.log(window.innerWidth);
+    console.log(this.state.maxWidth);
+  };
+
+  componentDidMount() {
+    window.addEventListener("resize", this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
   }
 
   render() {
@@ -19,8 +42,7 @@ export class Tiles extends React.Component {
         direction="row"
         spacing={3}
         justifyContent="center"
-        alignItems="flex-start"
-        maxWidth="700px"
+        maxWidth={this.state.maxWidth}
         margin="auto"
         marginTop={3}
         marginBottom={3}

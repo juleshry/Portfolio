@@ -5,7 +5,7 @@ import { LargeProject } from "./LargeProject";
 
 let ProjectsJson = require("../../Projects.json");
 
-const FORCESMALL = 520;
+const FORCESMALL = 600;
 
 export class Project extends React.Component {
   constructor(props) {
