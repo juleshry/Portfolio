@@ -11,10 +11,25 @@ import { Title } from "./Components/Title";
 import { Tiles } from "./Components/Tiles";
 import { MyAvatar } from "./Components/MyAvatar";
 
+function pxToRem(value) {
+  return `${value / 16}rem`;
+}
+
 const theme = responsiveFontSizes(
   createTheme({
     typography: {
       fontFamily: ["Sora", "Montserrat", "serif"].join(","),
+    },
+    overrides: {
+      MuiTypography: {
+        body1: {
+          fontSize: pxToRem(15),
+        },
+        body2: { fontSize: pxToRem(14) },
+        h4: { fontSize: pxToRem(32) },
+        h5: { fontSize: pxToRem(24) },
+        h6: { fontSize: pxToRem(18) },
+      },
     },
   })
 );

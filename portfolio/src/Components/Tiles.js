@@ -23,8 +23,6 @@ export class Tiles extends React.Component {
       this.setState({ maxWidth: window.innerWidth - 30 + "px" });
     else if (window.innerWidth < 820) this.setState({ maxWidth: "550px" });
     else this.setState({ maxWidth: "700px" });
-    console.log(window.innerWidth);
-    console.log(this.state.maxWidth);
   };
 
   componentDidMount() {
