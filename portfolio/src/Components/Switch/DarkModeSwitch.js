@@ -10,12 +10,12 @@ export class DarkModeSwitch extends React.Component {
 
     this.state = { ...props };
     this.state.toggled = false;
-    this.state.componentWidth = Math.min(200, (window.innerWidth - 130) / 2);
+    this.state.componentWidth = Math.min(200, (window.innerWidth - 100) / 2);
   }
 
   handleResize = () => {
     this.setState({
-      componentWidth: Math.min(200, (window.innerWidth - 130) / 2),
+      componentWidth: Math.min(200, (window.innerWidth - 100) / 2),
     });
   };
 
