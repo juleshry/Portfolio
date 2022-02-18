@@ -52,9 +52,13 @@ export class DarkModeSwitch extends React.Component {
             checked={this.state.toggled}
             handleToggle={() => {
               this.setState({ toggled: !this.state.toggled });
-              if (!this.state.toggled)
+              if (!this.state.toggled) {
                 document.body.classList.toggle("dark-theme", true);
-              else document.body.classList.toggle("dark-theme", false);
+                document.body.classList.toggle("light-theme", false);
+              } else {
+                document.body.classList.toggle("dark-theme", false);
+                document.body.classList.toggle("light-theme", true);
+              }
             }}
           />
         </CardContent>
