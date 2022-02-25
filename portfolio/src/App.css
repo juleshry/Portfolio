@@ -51,7 +51,8 @@ body {
 }
 
 body.light-theme {
-  background: url("../public/assets/light.jpg");
+  background: url("../public/assets/light.jpg"),
+    url("../public/assets/dark.jpg");
   background-attachment: scroll;
   -webkit-background-size: 100% 100%;
   -moz-background-size: 100% 100%;
