@@ -43,6 +43,7 @@ export class SmallProjectText extends React.Component {
         flexDirection="column"
         justifyContent="space-between"
         m={1}
+        ml={2.5}
         height="100%"
       >
         <Typography variant={this.state.title}>{this.state.name}</Typography>
