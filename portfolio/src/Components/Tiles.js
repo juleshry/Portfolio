@@ -5,6 +5,13 @@ import Grid from "@mui/material/Grid";
 import { Project } from "./Projects/Project";
 import { DarkModeSwitch } from "./Switch/DarkModeSwitch";
 
+const TileStyle = {
+  paddingRight: 12,
+  paddingLeft: 12,
+  paddingTop: 12,
+  paddingBottom: 12,
+};
+
 export class Tiles extends React.Component {
   constructor(props) {
     super(props);
@@ -45,22 +52,22 @@ export class Tiles extends React.Component {
         marginTop={3}
         marginBottom={3}
       >
-        <Grid item>
+        <Grid item style={TileStyle}>
           <Project name="Clouds" isLocal={true}></Project>
         </Grid>
-        <Grid item>
+        <Grid item style={TileStyle}>
           <Project name="Circles" isLocal={true}></Project>
         </Grid>
-        <Grid item>
+        <Grid item style={TileStyle}>
           <Project name="Apso" isLocal={false}></Project>
         </Grid>
-        <Grid item>
+        <Grid item style={TileStyle}>
           <Project name="Alien_landscape" isLocal={true}></Project>
         </Grid>
-        <Grid item>
+        <Grid item style={TileStyle}>
           <Project name="Rectangles" isLocal={true}></Project>
         </Grid>
-        <Grid item>
+        <Grid item style={TileStyle}>
           <DarkModeSwitch />
         </Grid>
       </Grid>

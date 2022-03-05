@@ -30,6 +30,11 @@ const theme = responsiveFontSizes(
         h5: { fontSize: pxToRem(24) },
         h6: { fontSize: pxToRem(18) },
       },
+      MuiCardContent: {
+        root: {
+          paddingLeft: 0,
+        },
+      },
     },
   })
 );
