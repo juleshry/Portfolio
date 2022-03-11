@@ -47,7 +47,13 @@ export class DarkModeSwitch extends React.Component {
           WebkitUserSelect: "none",
         }}
       >
-        <CardContent style={{ margin: "auto", marginTop: "18%" }}>
+        <CardContent
+          style={{
+            margin: "auto",
+            padding: "0",
+            height: 0.45 * this.state.componentWidth + "px",
+          }}
+        >
           <Switch
             checked={this.state.toggled}
             handleToggle={() => {
@@ -60,6 +66,7 @@ export class DarkModeSwitch extends React.Component {
                 document.body.classList.toggle("light-theme", true);
               }
             }}
+            dimensions={this.state.componentWidth}
           />
         </CardContent>
       </Card>

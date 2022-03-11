@@ -1,7 +1,11 @@
 import React from "react";
 import "./Switch.css";
 
-const Switch = ({ handleToggle }) => {
+const Switch = ({ handleToggle, dimensions }) => {
+  let width = dimensions / 2;
+  let height = dimensions / 4;
+  let buttonwidth = (0.9 * dimensions) / 4;
+
   return (
     <>
       <input
@@ -10,8 +14,19 @@ const Switch = ({ handleToggle }) => {
         type="checkbox"
         onChange={handleToggle}
       />
-      <label className="react-switch-label" htmlFor={`react-switch-new`}>
-        <span className={`react-switch-button`} />
+      <label
+        className="react-switch-label"
+        htmlFor={`react-switch-new`}
+        style={{ width: width, height: height }}
+      >
+        <span
+          className={`react-switch-button`}
+          style={{
+            width: buttonwidth,
+            height: buttonwidth,
+            borderRadius: buttonwidth,
+          }}
+        />
       </label>
     </>
   );
