@@ -50,7 +50,7 @@ export class DarkModeSwitch extends React.Component {
         <CardContent
           style={{
             margin: "auto",
-            paddingBottom: "0",
+            paddingTop: "0",
             paddingRight: "0",
             height: 0.4 * this.state.componentWidth + "px",
           }}
