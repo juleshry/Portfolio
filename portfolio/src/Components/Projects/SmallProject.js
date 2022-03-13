@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 
 import { SmallProjectText } from "./SmallProjectText";
-import { MyLink } from "../MyLink";
+import { ProjectModal } from "./ProjectModal";
 
 export class SmallProject extends React.Component {
   constructor(props) {
@@ -105,11 +105,11 @@ export class SmallProject extends React.Component {
               style={{
                 position: "relative",
                 float: "right",
-                marginTop: "-10%",
-                marginRight: "-20%",
+                marginTop: "-7%",
+                marginRight: "-15%",
               }}
             >
-              <MyLink {...this.state} className="smallProject" />
+              <ProjectModal {...this.state} className="smallProject" />
             </div>
           </CardContent>
         </div>

@@ -49,7 +49,6 @@ export class SmallProjectText extends React.Component {
         <Typography variant={this.state.title}>{this.state.name}</Typography>
         <div>
           <Typography
-            gutterBottom
             variant={this.state.corps}
             style={{
               alignItems: "end",

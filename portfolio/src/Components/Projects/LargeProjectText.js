@@ -26,16 +26,16 @@ export class LargeProjectText extends React.Component {
         </Typography>
         <div>
           <Typography
-            gutterBottom
             className="largeProject"
+            variant="body1"
             style={{
-              alignItems: "end",
+              alignItems: "stretch",
               paddingTop: 10,
               textAlign: "justify",
               textJustify: "auto",
-              overflowX: "hidden",
-              maxHeight: 200,
+              height: "100%",
               width: "100%",
+              color: "#000",
             }}
           >
             {this.state.description}

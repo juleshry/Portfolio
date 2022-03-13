@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 
 import { LargeProjectText } from "./LargeProjectText";
-import { MyLink } from "../MyLink";
+import { ProjectModal } from "./ProjectModal";
 
 const LARGEWIDTH = 428;
 
@@ -48,13 +48,30 @@ export class LargeProject extends React.Component {
           }}
         ></CardMedia>
         <CardContent>
-          <LargeProjectText
-            name={this.state.name}
-            projectUrl={this.state.projectUrl}
-            description={this.state.description}
-          ></LargeProjectText>
+          <div
+            style={{
+              position: "relative",
+              width: "80%",
+              height: "100%",
+            }}
+          >
+            <LargeProjectText
+              name={this.state.name}
+              projectUrl={this.state.projectUrl}
+              description={this.state.description}
+            ></LargeProjectText>
+          </div>
+          <div
+            style={{
+              position: "fixed",
+              top: "1%",
+              right: "1%",
+              float: "right",
+            }}
+          >
+            <ProjectModal {...this.state} className="largeProject" />
+          </div>
         </CardContent>
-        <MyLink {...this.state} className="largeProject" />
       </Card>
     );
   }
