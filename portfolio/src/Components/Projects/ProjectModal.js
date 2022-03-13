@@ -27,7 +27,7 @@ const cardStyle = {
   borderRadius: 25,
   WebkitUserSelect: "none",
   margin: "auto",
-  marginTop: "15%",
+  top: "15%",
 };
 
 export class ProjectModal extends React.Component {
