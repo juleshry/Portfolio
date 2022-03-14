@@ -1,5 +1,5 @@
 # Portfolio Website
-[Here](juleshry.github.io/Portfolio)
+You can visit my portfolio [here](juleshry.github.io/Portfolio)
 
 This is a self-coded portfolio.
 
