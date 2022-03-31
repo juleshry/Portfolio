@@ -11,7 +11,9 @@ import { Typography } from "@material-ui/core";
 
 import { motion } from "framer-motion";
 
-const cardStyle = {
+const modalCardStyle = {
+  display: "block",
+  overflowY: "overlay",
   position: "relative",
   backgroundColor: "rgba(230,230,230,0.3)",
   backgroundImage:
@@ -23,7 +25,6 @@ const cardStyle = {
   borderTop: "solid 1px rgba(255,255,255,0.8)",
   width: "80%",
   height: "70%",
-  margin: 5,
   borderRadius: 25,
   WebkitUserSelect: "none",
   margin: "auto",
@@ -47,7 +48,6 @@ export class ProjectModal extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       //      <Link
       //        href={this.state.projectUrl}
@@ -79,7 +79,7 @@ export class ProjectModal extends React.Component {
           </ButtonBase>
         </motion.div>
         <Modal open={this.state.openModal} onClose={this.handleClose}>
-          <Card style={cardStyle} raised={true}>
+          <Card className="card-modal" style={modalCardStyle}>
             <CardMedia
               component="img"
               image={process.env.PUBLIC_URL + this.state.imageUrl}
