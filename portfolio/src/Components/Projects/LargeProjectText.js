@@ -35,7 +35,6 @@ export class LargeProjectText extends React.Component {
               textJustify: "auto",
               height: "100%",
               width: "100%",
-              color: "#000",
             }}
           >
             {this.state.description}

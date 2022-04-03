@@ -1,15 +1,22 @@
 function setup() {
-  let canvas = createCanvas(windowWidth, windowHeight);
+  const width = windowWidth - 50;
+  const height = windowHeight - 25;
+
+  let canvas = createCanvas(width, height);
   canvas.parent("sketch-container");
+  canvas.center("horizontal");
   background("black");
   colorMode(HSB);
 }
 
 function draw() {
+  const width = windowWidth - 50;
+  const height = windowHeight - 25;
+
   noStroke();
 
-  for (let x = 0; x < (5 * windowWidth) / 7; x++) {
-    for (let y = windowHeight / 5; y < (4 * windowHeight) / 5; y++) {
+  for (let x = 0; x < (5 * width) / 7; x++) {
+    for (let y = height / 5; y < (4 * height) / 5; y++) {
       my_maths_function(x, y);
     }
   }

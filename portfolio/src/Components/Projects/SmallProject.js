@@ -5,7 +5,6 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 
 import { SmallProjectText } from "./SmallProjectText";
-import { ProjectModal } from "./ProjectModal";
 import { MyModal } from "../MyModal";
 
 export class SmallProject extends React.Component {

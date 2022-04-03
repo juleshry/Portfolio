@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My First Creative Coding</title>
+    <title>Alien Landscape</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script>
     <script src="secondSketch.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Sora:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="utf-8" />
   </head>
-  <body style="background-color: black">
+  <body>
     <div id="sketch-container"></div>
+    <button
+      onClick="window.location.reload();"
+      style="
+        position: absolute;
+        bottom: 1%;
+        margin: 20px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 30px;
+        font-family: Sora;
+        font-size: large;
+        cursor: pointer;
+      "
+    >
+      Reload
+    </button>
   </body>
 </html>

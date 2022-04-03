@@ -5,6 +5,9 @@ import { Typography } from "@material-ui/core";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
+import { ButtonBase } from "@mui/material";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Link } from "@mui/material";
 
 const modalCardStyle = {
   display: "block",
@@ -19,11 +22,11 @@ const modalCardStyle = {
   borderLeft: "solid 1px rgba(255,255,255,0.3)",
   borderTop: "solid 1px rgba(255,255,255,0.8)",
   width: "80%",
-  height: "70%",
+  height: "80%",
   borderRadius: 25,
   WebkitUserSelect: "none",
   margin: "auto",
-  top: "15%",
+  top: "10%",
 };
 
 export class MyModal extends React.Component {
@@ -34,6 +37,11 @@ export class MyModal extends React.Component {
   }
 
   render() {
+    let color = document.body.className == "light-theme" ? "black" : "white";
+    let buttonColor =
+      document.body.className == "light-theme"
+        ? "rgba(255, 255, 255, 0.3)"
+        : "rgba(0, 0, 0, 0.3)";
     return (
       <Modal open={this.props.openModal} onClose={this.props.handleClose}>
         <Card className="card-modal" style={modalCardStyle}>
@@ -51,14 +59,41 @@ export class MyModal extends React.Component {
             <div style={{ margin: "20px" }}>
               <Typography
                 variant="h2"
-                style={{ marginTop: "10px", marginBottom: "30px" }}
+                style={{
+                  marginTop: "10px",
+                  marginBottom: "30px",
+                  color: color,
+                }}
               >
                 {this.state.name}
               </Typography>
-              <Typography variant="subtitle2">
+              <Typography variant="subtitle2" style={{ color: color }}>
                 {this.state.description}
               </Typography>
             </div>
+            <Link
+              href={this.state.projectUrl}
+              rel="noopener noreferrer"
+              target="_blank"
+              underline="none"
+              color={color}
+            >
+              <ButtonBase
+                style={{
+                  padding: 15,
+                  paddingLeft: 20,
+                  margin: 20,
+                  background: buttonColor,
+                  borderColor: "this.state.color",
+                  border: 10,
+                  borderRadius: 30,
+                  borderWidth: 2,
+                }}
+              >
+                <Typography>Preview</Typography>
+                <ArrowForwardIcon />
+              </ButtonBase>
+            </Link>
           </CardContent>
         </Card>
       </Modal>
