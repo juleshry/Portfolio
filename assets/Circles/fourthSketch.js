@@ -1,6 +1,10 @@
 function setup() {
-  let canvas = createCanvas(windowWidth, windowHeight);
+  const width = windowWidth - 50;
+  const height = windowHeight - 25;
+
+  let canvas = createCanvas(width, height);
   canvas.parent("sketch-container");
+  canvas.center("horizontal");
   colorMode(HSB);
   angleMode(DEGREES);
 }
@@ -18,8 +22,11 @@ function draw() {
 }
 
 function spot(a) {
+  const width = windowWidth - 50;
+  const height = windowHeight - 25;
+
   let x = 200 * cos(a * 3);
   let y = 200 * sin(a * 4);
 
-  circle(windowWidth / 2 + x, windowHeight / 2 - y, 100);
+  circle(width / 2 + x, height / 2 - y, 100);
 }

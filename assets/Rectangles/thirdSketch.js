@@ -1,6 +1,10 @@
 function setup() {
-  let canvas = createCanvas(windowWidth, windowHeight);
+  const width = windowWidth - 50;
+  const height = windowHeight - 25;
+
+  let canvas = createCanvas(width, height);
   canvas.parent("sketch-container");
+  canvas.center("horizontal");
   background("black");
   angleMode(DEGREES);
   colorMode(HSB);
@@ -15,10 +19,13 @@ function draw() {
 }
 
 function draw_Rectangles() {
+  const width = windowWidth - 50;
+  const height = windowHeight - 25;
+
   let w = 15;
   let h = 5;
-  for (let x = windowWidth / 5; x < (4 * windowWidth) / 5; x += 22) {
-    for (let y = windowHeight / 4; y < (3 * windowHeight) / 4; y += 11) {
+  for (let x = width / 5; x < (4 * width) / 5; x += 22) {
+    for (let y = height / 4; y < (3 * height) / 4; y += 11) {
       let n = noise(x / 200, y / 200) - 0.5;
       let rotation = 90 * n;
 
