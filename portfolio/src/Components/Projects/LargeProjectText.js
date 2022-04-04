@@ -21,12 +21,12 @@ export class LargeProjectText extends React.Component {
         width="100%"
         alignItems="start"
       >
-        <Typography variant="h4" className="largeProject">
+        <Typography variant="h4" className="tileText">
           {this.state.name}
         </Typography>
         <div>
           <Typography
-            className="largeProject"
+            className="tileText"
             variant="body1"
             style={{
               alignItems: "stretch",

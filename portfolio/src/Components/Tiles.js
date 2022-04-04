@@ -5,6 +5,8 @@ import Grid from "@mui/material/Grid";
 import { Project } from "./Projects/Project";
 import { DarkModeSwitch } from "./Switch/DarkModeSwitch";
 
+import { FolderTile } from "./FolderTile";
+
 const TileStyle = {
   paddingRight: 12,
   paddingLeft: 12,
@@ -53,19 +55,7 @@ export class Tiles extends React.Component {
         marginBottom={3}
       >
         <Grid item style={TileStyle}>
-          <Project name="Clouds" isLocal={true}></Project>
-        </Grid>
-        <Grid item style={TileStyle}>
-          <Project name="Circles" isLocal={true}></Project>
-        </Grid>
-        <Grid item style={TileStyle}>
-          <Project name="Apso" isLocal={false}></Project>
-        </Grid>
-        <Grid item style={TileStyle}>
-          <Project name="Alien_landscape" isLocal={true}></Project>
-        </Grid>
-        <Grid item style={TileStyle}>
-          <Project name="Rectangles" isLocal={true}></Project>
+          <FolderTile text="Projects" />
         </Grid>
         <Grid item style={TileStyle}>
           <DarkModeSwitch />

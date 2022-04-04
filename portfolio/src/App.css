@@ -11,7 +11,7 @@
   display: none;
 }
 
-.card-modal::-webkit-scrollbar-button {
+.overFlowY.card-modal::-webkit-scrollbar-button {
   height: 20px;
 }
 
@@ -32,7 +32,7 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.card-modal::-webkit-scrollbar-thumb {
+.overFlowY::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.4);
   background-image: linear-gradient(
     to bottom right,
@@ -46,7 +46,7 @@
   border-radius: 10px;
   scroll-padding-top: 100px;
 }
-.card-modal::-webkit-scrollbar-thumb:hover {
+.overFlowY::-webkit-scrollbar-thumb:hover {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
@@ -76,6 +76,7 @@ body.light-theme {
   background: url("../public/assets/light.jpg"),
     url("../public/assets/dark.jpg");
   background-attachment: scroll;
+  background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
   -moz-background-size: 100% 100%;
   -o-background-size: 100% 100%;
@@ -105,12 +106,12 @@ header {
   transition: color 0.3s cubic-bezier(0, 0.68, 0.78, 0.65);
 }
 
-body.dark-theme .largeProject {
+body.dark-theme .tileText {
   color: #fff;
   transition: color 0.3s cubic-bezier(0, 0.68, 0.78, 0.65);
 }
 
-.largeProject {
+.tileText {
   color: #000;
   transition: color 0.3s cubic-bezier(0, 0.68, 0.78, 0.65);
 }

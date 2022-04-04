@@ -8,6 +8,8 @@ import CardContent from "@mui/material/CardContent";
 import { ButtonBase } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Link } from "@mui/material";
+import styled from "@emotion/styled";
+import { Backdrop } from "@mui/material";
 
 const modalCardStyle = {
   display: "block",
@@ -22,11 +24,13 @@ const modalCardStyle = {
   borderLeft: "solid 1px rgba(255,255,255,0.3)",
   borderTop: "solid 1px rgba(255,255,255,0.8)",
   width: "80%",
+  maxWidth: "750px",
   height: "80%",
   borderRadius: 25,
   WebkitUserSelect: "none",
   margin: "auto",
   top: "10%",
+  outline: "none",
 };
 
 export class MyModal extends React.Component {
@@ -43,8 +47,23 @@ export class MyModal extends React.Component {
         ? "rgba(255, 255, 255, 0.3)"
         : "rgba(0, 0, 0, 0.3)";
     return (
-      <Modal open={this.props.openModal} onClose={this.props.handleClose}>
-        <Card className="card-modal" style={modalCardStyle}>
+      <Modal
+        open={this.props.openModal}
+        onClose={this.props.handleClose}
+        style={{ border: "none" }}
+        BackdropComponent={styled(Backdrop, {
+          name: "MuiModal",
+          slot: "Backdrop",
+          overridesResolver: (props, styles) => {
+            return styles.backdrop;
+          },
+        })({
+          zIndex: -10,
+          backgroundColor: "rgb(0,0,0,0.5)",
+          backdropFilter: "blur(10px)",
+        })}
+      >
+        <Card className="overFlowY card-modal" style={modalCardStyle}>
           <CardMedia
             component="img"
             image={process.env.PUBLIC_URL + this.state.imageUrl}
@@ -89,6 +108,7 @@ export class MyModal extends React.Component {
                   borderRadius: 30,
                   borderWidth: 2,
                 }}
+                disableRipple={true}
               >
                 <Typography>Preview</Typography>
                 <ArrowForwardIcon />
