@@ -2,7 +2,6 @@ import React from "react";
 
 import Grid from "@mui/material/Grid";
 
-import { Project } from "./Projects/Project";
 import { DarkModeSwitch } from "./Switch/DarkModeSwitch";
 
 import { FolderTile } from "./FolderTile";

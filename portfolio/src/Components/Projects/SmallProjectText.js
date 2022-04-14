@@ -10,21 +10,17 @@ export class SmallProjectText extends React.Component {
     this.state = { ...props };
     this.state.componentWidth =
       Math.min(200, (window.innerWidth - 100) / 2) * (3 / 4);
-    this.state.componentHeight =
-      Math.min(200, (window.innerWidth - 100) / 2) * 0.55;
-    this.state.title = window.innerWidth < 520 ? "h6" : "h5";
-    this.state.corps = window.innerWidth < 520 ? "body2" : "body1";
+    this.state.title = window.innerWidth < 520 ? "h5" : "h4";
   }
 
   handleResize = () => {
     this.setState({
       componentWidth: Math.min(200, (window.innerWidth - 100) / 2) * (3 / 4),
-      componentHeight: Math.min(200, (window.innerWidth - 100) / 2) * 0.55,
     });
     if (window.innerWidth < 520) {
-      this.setState({ title: "h6", corps: "body2" });
+      this.setState({ title: "h5" });
     } else {
-      this.setState({ title: "h5", corps: "body1" });
+      this.setState({ title: "h4" });
     }
   };
 
@@ -45,22 +41,18 @@ export class SmallProjectText extends React.Component {
         m={1}
         ml={2.5}
         height="100%"
+        width="100%"
       >
-        <Typography variant={this.state.title}>{this.state.name}</Typography>
-        <div>
-          <Typography
-            variant={this.state.corps}
-            style={{
-              alignItems: "end",
-              textAlign: "justify",
-              textJustify: "auto",
-              maxHeight: this.state.componentHeight,
-              width: 0.95 * this.state.componentWidth,
-            }}
-          >
-            {this.state.description}
-          </Typography>
-        </div>
+        <Typography
+          variant={this.state.title}
+          noWrap
+          style={{
+            whiteSpace: "pre-line",
+            maxWidth: this.state.componentWidth,
+          }}
+        >
+          {this.state.name}
+        </Typography>
       </Box>
     );
   }

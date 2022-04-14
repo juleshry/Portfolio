@@ -66,6 +66,7 @@ export class FolderTile extends React.Component {
           <div style={{ width: this.state.componentWidth, margin: "auto" }}>
             <img
               src={folderImagePath}
+              alt="Folder"
               width={this.state.imageWidth}
               height={this.state.imageWidth}
               style={{

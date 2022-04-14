@@ -1,4 +1,7 @@
 import "./App.css";
+
+import React from "react";
+
 import {
   ThemeProvider,
   createTheme,
@@ -10,6 +13,7 @@ import Box from "@mui/material/Box";
 import { Title } from "./Components/Title";
 import { Tiles } from "./Components/Tiles";
 import { MyAvatar } from "./Components/MyAvatar";
+import { Background } from "./background";
 
 function pxToRem(value) {
   return `${value / 16}rem`;
@@ -52,24 +56,34 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App" style={{ overflowX: "hidden", overflowY: "hidden" }}>
-        <AppBar id="appBar" style={appBarStyle}>
-          <Box
-            display="flex"
-            flexDirection="row"
-            justifyContent="space-between"
-            m={1}
-            alignItems="center"
-          >
-            <Title />
-            <MyAvatar />
-          </Box>
-        </AppBar>
+    <>
+      <Background />
+      <ThemeProvider theme={theme}>
+        <div
+          className="App"
+          style={{
+            position: "relative",
+            overflowX: "hidden",
+            overflowY: "hidden",
+          }}
+        >
+          <AppBar id="appBar" style={appBarStyle}>
+            <Box
+              display="flex"
+              flexDirection="row"
+              justifyContent="space-between"
+              m={1}
+              alignItems="center"
+            >
+              <Title />
+              <MyAvatar />
+            </Box>
+          </AppBar>
 
-        <Tiles />
-      </div>
-    </ThemeProvider>
+          <Tiles />
+        </div>
+      </ThemeProvider>
+    </>
   );
 }
 

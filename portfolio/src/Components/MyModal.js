@@ -41,9 +41,9 @@ export class MyModal extends React.Component {
   }
 
   render() {
-    let color = document.body.className == "light-theme" ? "black" : "white";
+    let color = document.body.className === "light-theme" ? "black" : "white";
     let buttonColor =
-      document.body.className == "light-theme"
+      document.body.className === "light-theme"
         ? "rgba(255, 255, 255, 0.3)"
         : "rgba(0, 0, 0, 0.3)";
     return (
