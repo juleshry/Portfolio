@@ -28,23 +28,17 @@ export class LargeProject extends React.Component {
 
   render() {
     let cardStyle = {
-      display: "flex",
-      backgroundColor: "rgba(230,230,230,0.1)",
       backgroundImage:
         "linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0))",
-      WebkitBackdropFilter: "blur(10px)",
-      backdropFilter: "blur(10px)",
-      boxShadow: "2px 2px 2px rgba(0, 0, 0, .2)",
-      borderLeft: "solid 1px rgba(255,255,255,0.3)",
-      borderTop: "solid 1px rgba(255,255,255,0.8)",
       maxWidth: this.state.width,
       width: this.state.width,
-      height: 200,
-      margin: 5,
-      borderRadius: 25,
-      WebkitUserSelect: "none",
-      cursor: "pointer",
     };
+
+    if (navigator.userAgent.toLowerCase().indexOf("firefox") > -1) {
+      cardStyle.backgroundColor = "rgba(230,230,230,1)";
+    } else {
+      cardStyle.backgroundColor = "rgba(230,230,230,0.1)";
+    }
 
     return (
       <>

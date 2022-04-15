@@ -53,7 +53,7 @@ export class FolderTile extends React.Component {
             WebkitBackdropFilter: "blur(10px)",
             backdropFilter: "blur(10px)",
             boxShadow: "2px 2px 2px rgba(0, 0, 0, .2)",
-            borderLeft: "solid 1px rgba(255,255,255,0.3)",
+            borderLeft: "solid 1px rgba(255,255,255,0.8)",
             borderTop: "solid 1px rgba(255,255,255,0.8)",
             maxWidth: this.state.componentWidth,
             height: this.state.componentWidth,

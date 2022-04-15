@@ -25,6 +25,21 @@ const theme = responsiveFontSizes(
       fontFamily: ["Sora", "Montserrat", "serif"].join(","),
     },
     overrides: {
+      MuiCard: {
+        root: {
+          display: "flex",
+          WebkitBackdropFilter: "blur(10px)",
+          backdropFilter: "blur(10px)",
+          boxShadow: "2px 2px 2px rgba(0, 0, 0, .2)",
+          borderLeft: "solid 1px rgba(255,255,255,0.3)",
+          borderTop: "solid 1px rgba(255,255,255,0.8)",
+          borderRadius: 25,
+          height: 200,
+          margin: 5,
+          WebkitUserSelect: "none",
+          cursor: "pointer",
+        },
+      },
       MuiTypography: {
         body1: {
           fontSize: pxToRem(15),

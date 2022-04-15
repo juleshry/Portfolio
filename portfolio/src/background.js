@@ -73,7 +73,7 @@ export const Background = (props) => {
       height={height - 1}
       options={{ backgroundAlpha: 0 }}
       style={{
-        position: "absolute",
+        position: "fixed",
         height: "100%",
         bottom: 0,
         top: 0,
@@ -132,7 +132,7 @@ const Graph = (props) => {
     if (document.body.className === "light-theme") {
       setColors([0xffffff, 0xed625d, 0x4f45ff, 0xf79f88, 0xababff]);
     } else {
-      setColors([0x333333, 0xa73e3b, 0x231d9a, 0xc99082, 0x22223d]);
+      setColors([0x333333, 0x672624, 0x1917a0, 0x974941, 0x180c60]);
     }
   }
 
