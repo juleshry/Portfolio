@@ -78,8 +78,8 @@ function App() {
           <Router>
             <Routes>
               <Route exact path="/" element={<Tiles />} />
-              <Route path={linkPefix + "/projects"} element={<Projects />} />
-              <Route path={linkPefix + "/projects/P5js"} element={<P5js />} />
+              <Route path={"/projects"} element={<Projects />} />
+              <Route path={"/projects/P5js"} element={<P5js />} />
             </Routes>
           </Router>
         </div>

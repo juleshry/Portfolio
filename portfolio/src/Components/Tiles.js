@@ -55,7 +55,7 @@ export class Tiles extends React.Component {
         marginBottom={3}
       >
         <Grid item style={TileStyle}>
-          <Link to={linkPefix + "/projects"} style={{ textDecoration: "none" }}>
+          <Link to={"/projects"} style={{ textDecoration: "none" }}>
             <FolderTile text="Projects" />
           </Link>
         </Grid>
