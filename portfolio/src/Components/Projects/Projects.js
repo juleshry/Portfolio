@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { Project } from "./Project";
 import { FolderTile } from "../FolderTile";
 import { BackButton } from "../BackButton";
+import { linkPefix } from "../../App";
 
 const TileStyle = {
   paddingRight: 12,
@@ -64,7 +65,10 @@ export class Projects extends React.Component {
           <BackButton />
         </Grid>
         <Grid item style={TileStyle}>
-          <Link to="/projects/P5js" style={{ textDecoration: "none" }}>
+          <Link
+            to={linkPefix + "/projects/P5js"}
+            style={{ textDecoration: "none" }}
+          >
             <FolderTile text="P5js" />
           </Link>
         </Grid>

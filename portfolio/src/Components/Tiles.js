@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 import { DarkModeSwitch } from "./Switch/DarkModeSwitch";
 import { FolderTile } from "./FolderTile";
+import { linkPefix } from "../App";
 
 const TileStyle = {
   paddingRight: 12,
@@ -54,7 +55,7 @@ export class Tiles extends React.Component {
         marginBottom={3}
       >
         <Grid item style={TileStyle}>
-          <Link to="/projects" style={{ textDecoration: "none" }}>
+          <Link to={linkPefix + "/projects"} style={{ textDecoration: "none" }}>
             <FolderTile text="Projects" />
           </Link>
         </Grid>

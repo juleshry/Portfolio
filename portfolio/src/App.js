@@ -16,6 +16,8 @@ import { Background } from "./background";
 import { Projects } from "./Components/Projects/Projects";
 import { P5js } from "./Components/Projects/P5js/P5js";
 
+export const linkPefix = "/Portfolio";
+
 function pxToRem(value) {
   return `${value / 16}rem`;
 }
@@ -76,8 +78,8 @@ function App() {
           <Router>
             <Routes>
               <Route exact path="/" element={<Tiles />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/projects/P5js" element={<P5js />} />
+              <Route path={linkPefix + "/projects"} element={<Projects />} />
+              <Route path={linkPefix + "/projects/P5js"} element={<P5js />} />
             </Routes>
           </Router>
         </div>
