@@ -34,17 +34,19 @@ export class MyModal extends React.Component {
       outline: "none",
     };
 
-    if (navigator.userAgent.toLowerCase().indexOf("firefox") > -1) {
-      modalCardStyle.backgroundColor = "rgba(230,230,230,1)";
-    } else {
-      modalCardStyle.backgroundColor = "rgba(230,230,230,0.3)";
-    }
-
     let color = document.body.className === "light-theme" ? "black" : "white";
     let buttonColor =
       document.body.className === "light-theme"
         ? "rgba(255, 255, 255, 0.3)"
         : "rgba(0, 0, 0, 0.3)";
+
+    if (navigator.userAgent.toLowerCase().indexOf("firefox") > -1) {
+      modalCardStyle.backgroundColor = "rgba(230,230,230,1)";
+      color = "black";
+      buttonColor = "rgba(255, 255, 255, 0.3)";
+    } else {
+      modalCardStyle.backgroundColor = "rgba(230,230,230,0.3)";
+    }
 
     return (
       <Modal
