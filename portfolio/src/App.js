@@ -7,13 +7,14 @@ import {
   createTheme,
   responsiveFontSizes,
 } from "@material-ui/core/styles";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 
-import { Title } from "./Components/Title";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import { Appbar } from "./Components/Appbar";
 import { Tiles } from "./Components/Tiles";
-import { MyAvatar } from "./Components/MyAvatar";
 import { Background } from "./background";
+import { Projects } from "./Components/Projects/Projects";
+import { P5js } from "./Components/Projects/P5js/P5js";
 
 function pxToRem(value) {
   return `${value / 16}rem`;
@@ -37,7 +38,6 @@ const theme = responsiveFontSizes(
           height: 200,
           margin: 5,
           WebkitUserSelect: "none",
-          cursor: "pointer",
         },
       },
       MuiTypography: {
@@ -61,15 +61,6 @@ const theme = responsiveFontSizes(
 );
 
 function App() {
-  let appBarStyle = {
-    position: "sticky",
-    paddingBottom: 10,
-    backgroundColor: "none",
-    background: "none",
-    boxShadow: "none",
-    WebkitUserSelect: "none",
-  };
-
   return (
     <>
       <Background />
@@ -78,24 +69,17 @@ function App() {
           className="App"
           style={{
             position: "relative",
-            overflowX: "hidden",
-            overflowY: "hidden",
+            overflow: "hidden",
           }}
         >
-          <AppBar id="appBar" style={appBarStyle}>
-            <Box
-              display="flex"
-              flexDirection="row"
-              justifyContent="space-between"
-              m={1}
-              alignItems="center"
-            >
-              <Title />
-              <MyAvatar />
-            </Box>
-          </AppBar>
-
-          <Tiles />
+          <Appbar />
+          <Router>
+            <Routes>
+              <Route path="/" element={<Tiles />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/projects/P5js" element={<P5js />} />
+            </Routes>
+          </Router>
         </div>
       </ThemeProvider>
     </>

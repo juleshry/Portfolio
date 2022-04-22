@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./Switch.css";
 
 const Switch = ({ handleToggle, dimensions }) => {
@@ -10,9 +11,11 @@ const Switch = ({ handleToggle, dimensions }) => {
     <>
       <input
         className="react-switch-checkbox"
-        id={`react-switch-new`}
+        name="darkMode"
+        id="react-switch-new"
         type="checkbox"
         onChange={handleToggle}
+        checked={!(document.body.className == "light-theme")}
       />
       <label
         className="react-switch-label"

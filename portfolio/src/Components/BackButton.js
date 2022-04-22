@@ -1,17 +1,18 @@
 import React from "react";
 
-import { Card, Typography } from "@mui/material";
+import { Card } from "@mui/material";
 
-import { Link } from "react-router-dom";
-
-export class FolderTile extends React.Component {
+export class BackButton extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = { ...props };
     this.state.componentWidth = Math.min(200, (window.innerWidth - 100) / 2);
-    this.state.imageWidth = Math.min(200, (window.innerWidth - 100) / 2) * 0.5;
-    this.state.title = window.innerWidth < 520 ? "h6" : "h5";
+    this.state.imageWidth = Math.min(200, (window.innerWidth - 100) / 2) * 0.7;
+    this.state.imagePath =
+      document.body.className == "light-theme"
+        ? process.env.PUBLIC_URL + "/assets/blackArrow.png"
+        : process.env.PUBLIC_URL + "/assets/whiteArrow.png";
   }
 
   componentDidMount() {
@@ -25,16 +26,18 @@ export class FolderTile extends React.Component {
   handleResize = () => {
     this.setState({
       componentWidth: Math.min(200, (window.innerWidth - 100) / 2),
-      title: window.innerWidth < 520 ? "h6" : "h5",
-      imageWidth: Math.min(200, (window.innerWidth - 100) / 2) * 0.5,
+      imageWidth: Math.min(200, (window.innerWidth - 100) / 2) * 0.7,
     });
   };
 
-  render() {
-    let folderImagePath = process.env.PUBLIC_URL + "/assets/folder.png";
+  back() {
+    window.history.back();
+  }
 
+  render() {
     return (
       <Card
+        onClick={this.back}
         style={{
           position: "relative",
           display: "flex",
@@ -55,27 +58,16 @@ export class FolderTile extends React.Component {
             width: this.state.componentWidth,
             margin: "auto",
             display: "table-cell",
-            verticalAlign: "middle",
             textAlign: "center",
           }}
         >
           <img
-            src={folderImagePath}
+            src={this.state.imagePath}
             alt="Folder"
             width={this.state.imageWidth}
             height={this.state.imageWidth}
+            style={{}}
           />
-          <Typography
-            className="tileText"
-            variant={this.state.title}
-            style={{
-              display: "flex",
-              margin: "10px",
-              justifyContent: "center",
-            }}
-          >
-            {this.state.text}
-          </Typography>
         </div>
       </Card>
     );

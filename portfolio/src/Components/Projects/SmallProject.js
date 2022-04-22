@@ -59,6 +59,7 @@ export class SmallProject extends React.Component {
       top: "0%",
       transition: " 0.5s",
       transitionTimingFunction: "cubic-bezier(0,.66,.66,.88)",
+      cursor: "pointer",
     };
     let style2 = {
       filter: "",

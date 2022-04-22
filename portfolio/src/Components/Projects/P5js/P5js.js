@@ -2,10 +2,8 @@ import React from "react";
 
 import Grid from "@mui/material/Grid";
 
-import { Link } from "react-router-dom";
-
-import { DarkModeSwitch } from "./Switch/DarkModeSwitch";
-import { FolderTile } from "./FolderTile";
+import { Project } from "../Project";
+import { BackButton } from "../../BackButton";
 
 const TileStyle = {
   paddingRight: 12,
@@ -14,7 +12,7 @@ const TileStyle = {
   paddingBottom: 12,
 };
 
-export class Tiles extends React.Component {
+export class P5js extends React.Component {
   constructor(props) {
     super(props);
 
@@ -24,14 +22,14 @@ export class Tiles extends React.Component {
         ? window.innerWidth - 30 + "px"
         : window.innerWidth < 820
         ? "550px"
-        : "700px";
+        : "750px";
   }
 
   handleResize = () => {
     if (window.innerWidth < 600)
       this.setState({ maxWidth: window.innerWidth - 30 + "px" });
     else if (window.innerWidth < 820) this.setState({ maxWidth: "550px" });
-    else this.setState({ maxWidth: "700px" });
+    else this.setState({ maxWidth: "750px" });
   };
 
   componentDidMount() {
@@ -45,21 +43,37 @@ export class Tiles extends React.Component {
   render() {
     return (
       <Grid
+        className="overFlowY"
         container
         direction="row"
         spacing={3}
         justifyContent="center"
-        maxWidth={this.state.maxWidth}
+        width={this.state.maxWidth}
         margin="auto"
-        marginBottom={3}
+        style={{
+          height: "100%",
+          overflowY: "auto",
+          overflowX: "hidden",
+          outline: "none",
+        }}
       >
         <Grid item style={TileStyle}>
-          <Link to="/projects" style={{ textDecoration: "none" }}>
-            <FolderTile text="Projects" />
-          </Link>
+          <BackButton />
         </Grid>
         <Grid item style={TileStyle}>
-          <DarkModeSwitch />
+          <Project name="Clouds" isLocal={true}></Project>
+        </Grid>
+        <Grid item style={TileStyle}>
+          <Project name="Alien_landscape" isLocal={true}></Project>
+        </Grid>
+        <Grid item style={TileStyle}>
+          <Project name="Apso" isLocal={false}></Project>
+        </Grid>
+        <Grid item style={TileStyle}>
+          <Project name="Circles" isLocal={true}></Project>
+        </Grid>
+        <Grid item style={TileStyle}>
+          <Project name="Rectangles" isLocal={true}></Project>
         </Grid>
       </Grid>
     );

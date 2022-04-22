@@ -9,7 +9,7 @@ export class DarkModeSwitch extends React.Component {
     super(props);
 
     this.state = { ...props };
-    this.state.toggled = false;
+    this.state.toggled = !(document.body.className == "light-theme");
     this.state.componentWidth = Math.min(200, (window.innerWidth - 100) / 2);
   }
 
@@ -68,7 +68,7 @@ export class DarkModeSwitch extends React.Component {
               }
             }}
             dimensions={this.state.componentWidth}
-            style={{ padding: "auto" }}
+            style={{ padding: "auto", cursor: "pointer" }}
           />
         </CardContent>
       </Card>

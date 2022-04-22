@@ -28,17 +28,14 @@ export class LargeProject extends React.Component {
 
   render() {
     let cardStyle = {
+      flexDireaction: "row",
       backgroundImage:
         "linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0))",
+      backgroundColor: "rgba(230,230,230,0.1)",
       maxWidth: this.state.width,
       width: this.state.width,
+      cursor: "pointer",
     };
-
-    if (navigator.userAgent.toLowerCase().indexOf("firefox") > -1) {
-      cardStyle.backgroundColor = "rgba(230,230,230,1)";
-    } else {
-      cardStyle.backgroundColor = "rgba(230,230,230,0.1)";
-    }
 
     return (
       <>
