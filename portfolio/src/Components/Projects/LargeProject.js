@@ -28,12 +28,16 @@ export class LargeProject extends React.Component {
 
   render() {
     let cardStyle = {
+      display: "flex",
       flexDireaction: "row",
       backgroundImage:
         "linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0))",
       backgroundColor: "rgba(230,230,230,0.1)",
+      borderRadius: 25,
       maxWidth: this.state.width,
       width: this.state.width,
+      height: 200,
+      margin: 5,
       cursor: "pointer",
     };
 
