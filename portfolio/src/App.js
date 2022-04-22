@@ -75,9 +75,9 @@ function App() {
           <Appbar />
           <Router>
             <Routes>
-              <Route path="/Portfolio/" element={<Tiles />} />
-              <Route path="/Portfolio/projects" element={<Projects />} />
-              <Route path="/Portfolio/projects/P5js" element={<P5js />} />
+              <Route exact path="/" element={<Tiles />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/projects/P5js" element={<P5js />} />
             </Routes>
           </Router>
         </div>
