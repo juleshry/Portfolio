@@ -28,6 +28,7 @@ export class MyModal extends React.Component {
       width: "80%",
       maxWidth: "750px",
       height: "80%",
+      borderRadius: 25,
       margin: "auto",
       top: "10%",
       outline: "none",
