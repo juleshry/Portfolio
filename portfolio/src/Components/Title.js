@@ -3,10 +3,8 @@ import Typography from "@material-ui/core/Typography";
 
 export const Title = () => {
   return (
-    <div style={{ WebkitUserSelect: "none" }}>
-      <Typography variant="h2">
-        THIS IS MY <br /> PORTFOLIO
-      </Typography>
-    </div>
+    <Typography variant="h2" style={{ WebkitUserSelect: "none" }}>
+      THIS IS MY <br /> PORTFOLIO
+    </Typography>
   );
 };

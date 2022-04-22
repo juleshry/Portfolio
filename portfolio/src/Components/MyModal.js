@@ -25,6 +25,8 @@ export class MyModal extends React.Component {
       position: "relative",
       backgroundImage:
         "linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0))",
+      backdropFilter: "blur(20px)",
+      webkitBackdropFilter: "blur(20px)",
       width: "80%",
       maxWidth: "750px",
       height: "80%",

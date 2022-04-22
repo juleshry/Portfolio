@@ -96,13 +96,13 @@ body.dark-theme {
   transition: background 0.3s cubic-bezier(0, 0.68, 0.78, 0.65);
 }
 
-body.dark-theme header {
-  color: #fff;
+body.light-theme header {
+  color: #000;
   transition: color 0.3s cubic-bezier(0, 0.68, 0.78, 0.65);
 }
 
-header {
-  color: #000;
+body.dark-theme header {
+  color: #fff;
   transition: color 0.3s cubic-bezier(0, 0.68, 0.78, 0.65);
 }
 
@@ -111,7 +111,7 @@ body.dark-theme .tileText {
   transition: color 0.3s cubic-bezier(0, 0.68, 0.78, 0.65);
 }
 
-.tileText {
+body.light-theme .tileText {
   color: #000;
   transition: color 0.3s cubic-bezier(0, 0.68, 0.78, 0.65);
 }
