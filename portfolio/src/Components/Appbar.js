@@ -10,12 +10,11 @@ export class Appbar extends React.Component {
   render() {
     let appBarStyle = {
       position: "sticky",
-      paddingBottom: 10,
       backgroundColor: "transparent",
-      WebkitBackdropFilter: "blur(10px)",
-      backdropFilter: "blur(10px)",
       boxShadow: "none",
       WebkitUserSelect: "none",
+      borderBottom: "solid",
+      marginBottom: 10,
     };
 
     return (
@@ -24,7 +23,8 @@ export class Appbar extends React.Component {
           display="flex"
           flexDirection="row"
           justifyContent="space-between"
-          m={1}
+          ml={1}
+          mr={1}
           alignItems="center"
         >
           <Title />

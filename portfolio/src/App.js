@@ -39,6 +39,11 @@ const theme = responsiveFontSizes(
           WebkitUserSelect: "none",
         },
       },
+      MuiCardMedia: {
+        root: {
+          margin: "200px",
+        },
+      },
       MuiTypography: {
         body1: {
           fontSize: pxToRem(15),

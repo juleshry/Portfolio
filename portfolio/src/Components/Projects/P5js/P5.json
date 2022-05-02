@@ -1,0 +1,23 @@
+{
+  "Description": "A short series of images made with p5.js. I just wanted to be creative and make some cool design using code.",
+  "Clouds": {
+    "Imagelink": "/assets/Clouds/Clouds.png",
+    "Projectlink": "/assets/Clouds/Clouds.html",
+    "description": "A cloud created with a lot of dots and using the noise function."
+  },
+  "Circles": {
+    "Imagelink": "/assets/Circles/Circles.png",
+    "Projectlink": "/assets/Circles/Circles.html",
+    "description": "A cool figure made with a lot of circles."
+  },
+  "Rectangles": {
+    "Imagelink": "/assets/Rectangles/Rectangles.png",
+    "Projectlink": "/assets/Rectangles/Rectangles.html",
+    "description": "Using noise to make rectangles look cool."
+  },
+  "Alien_landscape": {
+    "Imagelink": "/assets/Alien_landscape/Alien_landscape.png",
+    "Projectlink": "/assets/Alien_landscape/Alien_landscape.html",
+    "description": "A lanscape coming from another planet made with noise."
+  }
+}

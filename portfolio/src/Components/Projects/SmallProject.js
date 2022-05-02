@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 
 import { SmallProjectText } from "./SmallProjectText";
-import { MyModal } from "../MyModal";
+import { ProjectModal } from "./ProjectModal";
 
 export class SmallProject extends React.Component {
   constructor(props) {
@@ -125,7 +125,7 @@ export class SmallProject extends React.Component {
             </CardContent>
           </div>
         </Card>
-        <MyModal
+        <ProjectModal
           openModal={this.state.openModal}
           handleClose={this.handleCloseModal}
           {...this.state}

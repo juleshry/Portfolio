@@ -65,6 +65,9 @@ export class Projects extends React.Component {
           <BackButton />
         </Grid>
         <Grid item style={TileStyle}>
+          <Project name="Apso" isLocal={false}></Project>
+        </Grid>
+        <Grid item style={TileStyle}>
           <Link
             to={linkPefix + "/projects/P5js"}
             style={{ textDecoration: "none" }}

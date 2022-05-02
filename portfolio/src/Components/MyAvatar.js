@@ -11,8 +11,8 @@ function getGoodAvatar(dimensions) {
       <Box
         display="flex"
         flexDirection="row"
-        justifyContent="space-between"
         mr={1}
+        ml={4}
         mt={-2}
         alignItems="center"
       >
@@ -31,7 +31,7 @@ function getGoodAvatar(dimensions) {
           roundedColor="none"
           imageWidth="100"
           imageHeight="100"
-        ></ReactRoundedImage>
+        />
       </Box>
     );
   } else {
@@ -41,8 +41,10 @@ function getGoodAvatar(dimensions) {
         flexDirection="column"
         justifyContent="space-between"
         mr={1}
+        pl={4}
         mt={-2}
         alignItems="center"
+        style={{ borderLeft: "solid" }}
       >
         <ReactRoundedImage
           image={process.env.PUBLIC_URL + "/assets/Apple_Avatar.png"}

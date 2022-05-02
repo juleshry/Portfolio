@@ -26,6 +26,9 @@ export class Tiles extends React.Component {
         : window.innerWidth < 820
         ? "550px"
         : "700px";
+    this.state.toggled = false;
+
+    this.handleSwitch = this.handleSwitch.bind(this);
   }
 
   handleResize = () => {
@@ -34,6 +37,17 @@ export class Tiles extends React.Component {
     else if (window.innerWidth < 820) this.setState({ maxWidth: "550px" });
     else this.setState({ maxWidth: "700px" });
   };
+
+  handleSwitch() {
+    this.setState({ toggled: !this.state.toggled });
+    if (!this.state.toggled) {
+      document.body.classList.toggle("dark-theme", true);
+      document.body.classList.toggle("light-theme", false);
+    } else {
+      document.body.classList.toggle("dark-theme", false);
+      document.body.classList.toggle("light-theme", true);
+    }
+  }
 
   componentDidMount() {
     window.addEventListener("resize", this.handleResize);
@@ -56,11 +70,18 @@ export class Tiles extends React.Component {
       >
         <Grid item style={TileStyle}>
           <Link to={linkPefix + "/projects"} style={{ textDecoration: "none" }}>
-            <FolderTile text="Projects" />
+            <FolderTile
+              text="Projects"
+              color={
+                document.body.className !== "light-theme"
+                  ? "#ffffff"
+                  : "#000000"
+              }
+            />
           </Link>
         </Grid>
         <Grid item style={TileStyle}>
-          <DarkModeSwitch />
+          <DarkModeSwitch toggle={this.handleSwitch} />
         </Grid>
       </Grid>
     );

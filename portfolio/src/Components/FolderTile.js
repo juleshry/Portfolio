@@ -2,8 +2,6 @@ import React from "react";
 
 import { Card, Typography } from "@mui/material";
 
-import { Link } from "react-router-dom";
-
 export class FolderTile extends React.Component {
   constructor(props) {
     super(props);
@@ -31,7 +29,12 @@ export class FolderTile extends React.Component {
   };
 
   render() {
-    let folderImagePath = process.env.PUBLIC_URL + "/assets/folder.png";
+    let color =
+      this.props.color == null
+        ? document.body.className === "light-theme"
+          ? "#000000"
+          : "#ffffff"
+        : this.props.color;
 
     return (
       <Card
@@ -53,18 +56,25 @@ export class FolderTile extends React.Component {
         <div
           style={{
             width: this.state.componentWidth,
-            margin: "auto",
+            margin: 10,
+            padding: 10,
             display: "table-cell",
             verticalAlign: "middle",
             textAlign: "center",
           }}
         >
-          <img
-            src={folderImagePath}
-            alt="Folder"
-            width={this.state.imageWidth}
-            height={this.state.imageWidth}
-          />
+          <lord-icon
+            src="https://cdn.lordicon.com/kpsnbsyj.json"
+            trigger="morph"
+            state="morph"
+            colors={"primary:" + color}
+            style={{
+              position: "relative",
+              width: "100%",
+              height: "100%",
+              marginBottom: -25,
+            }}
+          ></lord-icon>
           <Typography
             className="tileText"
             variant={this.state.title}

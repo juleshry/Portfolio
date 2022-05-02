@@ -9,10 +9,8 @@ export class BackButton extends React.Component {
     this.state = { ...props };
     this.state.componentWidth = Math.min(200, (window.innerWidth - 100) / 2);
     this.state.imageWidth = Math.min(200, (window.innerWidth - 100) / 2) * 0.7;
-    this.state.imagePath =
-      document.body.className == "light-theme"
-        ? process.env.PUBLIC_URL + "/assets/blackArrow.png"
-        : process.env.PUBLIC_URL + "/assets/whiteArrow.png";
+    this.state.imageColor =
+      document.body.className === "light-theme" ? "#000000" : "#ffffff";
   }
 
   componentDidMount() {
@@ -56,18 +54,18 @@ export class BackButton extends React.Component {
         <div
           style={{
             width: this.state.componentWidth,
-            margin: "auto",
+            margin: "10px",
             display: "table-cell",
             textAlign: "center",
           }}
         >
-          <img
-            src={this.state.imagePath}
-            alt="Folder"
-            width={this.state.imageWidth}
-            height={this.state.imageWidth}
-            style={{}}
-          />
+          <lord-icon
+            src="https://cdn.lordicon.com/gwlkhzue.json"
+            trigger="hover"
+            colors={"primary:" + this.state.imageColor}
+            state="hover-3"
+            style={{ width: "100%", height: "100%", transform: "scaleX(-1)" }}
+          ></lord-icon>
         </div>
       </Card>
     );

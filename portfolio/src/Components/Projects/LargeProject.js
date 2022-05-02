@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 
 import { LargeProjectText } from "./LargeProjectText";
-import { MyModal } from "../MyModal";
+import { ProjectModal } from "./ProjectModal";
 
 const LARGEWIDTH = 428;
 
@@ -53,12 +53,12 @@ export class LargeProject extends React.Component {
               MozWindowDragging: false,
             }}
           ></CardMedia>
-          <CardContent>
+          <CardContent style={{ padding: 0 }}>
             <div
               style={{
                 position: "relative",
-                width: "80%",
-                height: "100%",
+                height: "90%",
+                margin: 15,
               }}
             >
               <LargeProjectText
@@ -77,7 +77,7 @@ export class LargeProject extends React.Component {
             ></div>
           </CardContent>
         </Card>
-        <MyModal
+        <ProjectModal
           openModal={this.state.openModal}
           handleClose={this.handleClose}
           {...this.state}

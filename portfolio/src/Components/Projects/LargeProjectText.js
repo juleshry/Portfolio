@@ -16,7 +16,6 @@ export class LargeProjectText extends React.Component {
         display="flex"
         flexDirection="column"
         justifyContent="space-between"
-        m={1}
         height="100%"
         width="100%"
         alignItems="start"

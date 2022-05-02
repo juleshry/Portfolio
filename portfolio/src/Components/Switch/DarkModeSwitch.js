@@ -9,7 +9,7 @@ export class DarkModeSwitch extends React.Component {
     super(props);
 
     this.state = { ...props };
-    this.state.toggled = !(document.body.className == "light-theme");
+    this.state.toggled = !(document.body.className === "light-theme");
     this.state.componentWidth = Math.min(200, (window.innerWidth - 100) / 2);
   }
 
@@ -55,14 +55,8 @@ export class DarkModeSwitch extends React.Component {
           <Switch
             checked={this.state.toggled}
             handleToggle={() => {
+              this.props.toggle();
               this.setState({ toggled: !this.state.toggled });
-              if (!this.state.toggled) {
-                document.body.classList.toggle("dark-theme", true);
-                document.body.classList.toggle("light-theme", false);
-              } else {
-                document.body.classList.toggle("dark-theme", false);
-                document.body.classList.toggle("light-theme", true);
-              }
             }}
             dimensions={this.state.componentWidth}
             style={{ padding: "auto", cursor: "pointer" }}
