@@ -28,13 +28,27 @@ export class P5js extends React.Component {
         : "750px";
     this.state.textColor =
       document.body.className === "light-theme" ? "#000000" : "#ffffff";
+    this.state.textMaxWidth =
+      window.innerWidth < 600
+        ? "100%"
+        : window.innerWidth < 820
+        ? "80%"
+        : "60%";
+    this.state.textSize =
+      window.innerWidth < 600 ? "h6" : window.innerWidth < 820 ? "h5" : "h4";
   }
 
   handleResize = () => {
     if (window.innerWidth < 600)
-      this.setState({ maxWidth: window.innerWidth - 30 + "px" });
-    else if (window.innerWidth < 820) this.setState({ maxWidth: "550px" });
-    else this.setState({ maxWidth: "750px" });
+      this.setState({
+        maxWidth: window.innerWidth - 30 + "px",
+        textMaxWidth: "100%",
+        textSize: "h6",
+      });
+    else if (window.innerWidth < 820)
+      this.setState({ maxWidth: "550px", textMaxWidth: "80%", textSize: "h5" });
+    else
+      this.setState({ maxWidth: "750px", textMaxWidth: "60%", textSize: "h4" });
   };
 
   componentDidMount() {
@@ -49,10 +63,10 @@ export class P5js extends React.Component {
     return (
       <>
         <Typography
-          variant="h4"
+          variant={this.state.textSize}
           style={{
             margin: "auto",
-            maxWidth: "60%",
+            maxWidth: this.state.textMaxWidth,
             textAlign: "center",
             color: this.state.textColor,
           }}

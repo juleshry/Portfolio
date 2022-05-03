@@ -12,7 +12,6 @@ function getGoodAvatar(dimensions) {
         display="flex"
         flexDirection="row"
         mr={1}
-        ml={4}
         mt={-2}
         alignItems="center"
       >
@@ -34,6 +33,35 @@ function getGoodAvatar(dimensions) {
         />
       </Box>
     );
+  } else if (dimensions.w < 400) {
+    ret = (
+      <Box
+        display="flex"
+        flexDirection="column"
+        justifyContent="space-between"
+        mr={1}
+        mt={-2}
+        alignItems="center"
+      >
+        <ReactRoundedImage
+          image={process.env.PUBLIC_URL + "/assets/Apple_Avatar.png"}
+          roundedColor="none"
+          imageWidth="75"
+          imageHeight="75"
+        ></ReactRoundedImage>
+        <Box
+          display="flex"
+          flexDirection="column"
+          mr={1}
+          mt={-1}
+          alignItems="center"
+          style={{ marginRight: 10 }}
+        >
+          <Typography variant="h6">Jules Hery</Typography>
+          <Typography variant="caption">Developer</Typography>
+        </Box>
+      </Box>
+    );
   } else {
     ret = (
       <Box
@@ -41,10 +69,8 @@ function getGoodAvatar(dimensions) {
         flexDirection="column"
         justifyContent="space-between"
         mr={1}
-        pl={4}
         mt={-2}
         alignItems="center"
-        style={{ borderLeft: "solid" }}
       >
         <ReactRoundedImage
           image={process.env.PUBLIC_URL + "/assets/Apple_Avatar.png"}

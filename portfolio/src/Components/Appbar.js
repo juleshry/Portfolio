@@ -13,7 +13,6 @@ export class Appbar extends React.Component {
       backgroundColor: "transparent",
       boxShadow: "none",
       WebkitUserSelect: "none",
-      borderBottom: "solid",
       marginBottom: 10,
     };
 
@@ -24,7 +23,6 @@ export class Appbar extends React.Component {
           flexDirection="row"
           justifyContent="space-between"
           ml={1}
-          mr={1}
           alignItems="center"
         >
           <Title />

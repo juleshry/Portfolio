@@ -54,8 +54,8 @@ export class BackButton extends React.Component {
         <div
           style={{
             width: this.state.componentWidth,
-            margin: "10px",
             display: "table-cell",
+            padding: "10px",
             textAlign: "center",
           }}
         >

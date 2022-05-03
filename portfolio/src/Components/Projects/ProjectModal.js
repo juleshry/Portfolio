@@ -8,6 +8,8 @@ import { Link } from "@mui/material";
 import styled from "@emotion/styled";
 import { Backdrop } from "@mui/material";
 
+import { motion, AnimatePresence } from "framer-motion";
+
 export class ProjectModal extends React.Component {
   constructor(props) {
     super(props);
@@ -82,13 +84,12 @@ export class ProjectModal extends React.Component {
         "linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0))",
       backdropFilter: "blur(20px)",
       WebkitBackdropFilter: "blur(20px)",
-      width: "80%",
+      width: "100%",
       maxWidth: "750px",
-      height: "80%",
+      height: "100%",
       borderRadius: 25,
       margin: "auto",
       top: "10%",
-      outline: "none",
     };
 
     let color = document.body.className === "light-theme" ? "black" : "white";
@@ -124,80 +125,95 @@ export class ProjectModal extends React.Component {
           transition: "none",
         })}
       >
-        <div className="overFlowY card-modal" style={modalCardStyle}>
-          <div
-            style={{
-              width: "100%",
-              height: "50%",
-              overflow: "hidden",
-              borderTopLeftRadius: "25px",
-              borderTopRightRadius: "25px",
-            }}
-          >
-            <img
-              className="ModaleImage"
-              src={process.env.PUBLIC_URL + this.state.imageUrl}
-              alt={this.state.name}
-              style={this.state.backgroundStyle}
-              onMouseEnter={this.handleBackgrounMouseEnter}
-              onMouseLeave={this.handleBakcgroundMouseLeave}
-              onMouseMove={this.handleBackgrounMouseMove}
-            />
-          </div>
-          <CardContent>
-            <div style={{ margin: "20px" }}>
-              <Typography
-                variant="h2"
-                style={{
-                  marginTop: "10px",
-                  marginBottom: "30px",
-                  color: color,
-                  userSelect: "none",
-                }}
-              >
-                {this.state.name}
-              </Typography>
-              <Typography
-                variant="subtitle2"
-                style={{ color: color, userSelect: "none" }}
-              >
-                {this.state.description}
-              </Typography>
-            </div>
-            <Link
-              href={this.state.projectUrl}
-              rel="noopener noreferrer"
-              target="_blank"
-              underline="none"
-              color={color}
+        <motion.div
+          key="ProjectModal"
+          initial={{ opacity: 0, scale: 0.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.1 }}
+          transition={{ duration: 0.2, ease: "easeInOut" }}
+          style={{
+            width: "80%",
+            maxWidth: "750px",
+            height: "80%",
+            margin: "auto",
+            outline: "none",
+          }}
+        >
+          <div className="overFlowY card-modal" style={modalCardStyle}>
+            <div
+              style={{
+                width: "100%",
+                height: "50%",
+                overflow: "hidden",
+                borderTopLeftRadius: "25px",
+                borderTopRightRadius: "25px",
+              }}
             >
-              <ButtonBase
-                style={{
-                  padding: 15,
-                  paddingLeft: 20,
-                  margin: 20,
-                  background: buttonColor,
-                  borderColor: "this.state.color",
-                  border: 10,
-                  borderRadius: 30,
-                  borderWidth: 2,
-                }}
-                disableRipple={true}
-              >
-                <Typography>Preview</Typography>
-                <lord-icon
-                  src="https://cdn.lordicon.com/gwlkhzue.json"
-                  trigger="hover"
-                  colors={"primary:" + this.state.imageColor}
-                  state="hover-3"
-                  style={{ marginLeft: 5 }}
+              <img
+                className="ModaleImage"
+                src={process.env.PUBLIC_URL + this.state.imageUrl}
+                alt={this.state.name}
+                style={this.state.backgroundStyle}
+                onMouseEnter={this.handleBackgrounMouseEnter}
+                onMouseLeave={this.handleBakcgroundMouseLeave}
+                onMouseMove={this.handleBackgrounMouseMove}
+              />
+            </div>
+            <CardContent>
+              <div style={{ margin: "20px" }}>
+                <Typography
+                  variant="h2"
+                  style={{
+                    marginTop: "10px",
+                    marginBottom: "30px",
+                    color: color,
+                    userSelect: "none",
+                  }}
                 >
-                  <div className="lord-icon" />
-                </lord-icon>
-              </ButtonBase>
-            </Link>
-          </CardContent>
-        </div>
+                  {this.state.name}
+                </Typography>
+                <Typography
+                  variant="subtitle2"
+                  style={{ color: color, userSelect: "none" }}
+                >
+                  {this.state.description}
+                </Typography>
+              </div>
+              <Link
+                href={this.state.projectUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+                underline="none"
+                color={color}
+              >
+                <ButtonBase
+                  style={{
+                    padding: 15,
+                    paddingLeft: 20,
+                    margin: 20,
+                    background: buttonColor,
+                    borderColor: "this.state.color",
+                    border: 10,
+                    borderRadius: 30,
+                    borderWidth: 2,
+                  }}
+                  disableRipple={true}
+                >
+                  <Typography>Preview</Typography>
+                  <lord-icon
+                    src="https://cdn.lordicon.com/gwlkhzue.json"
+                    trigger="hover"
+                    colors={"primary:" + this.state.imageColor}
+                    state="hover-3"
+                    style={{ marginLeft: 5 }}
+                  >
+                    <div className="lord-icon" />
+                  </lord-icon>
+                </ButtonBase>
+              </Link>
+            </CardContent>
+          </div>
+        </motion.div>
       </Modal>
     );
   }

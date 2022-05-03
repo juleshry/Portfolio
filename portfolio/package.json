@@ -22,7 +22,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "debounce": "^1.2.1",
-    "framer-motion": "^6.2.3",
+    "framer-motion": "^6.3.3",
     "fs": "^0.0.1-security",
     "hsl-to-hex": "^1.0.0",
     "pixi-filters": "^4.1.6",

@@ -12,7 +12,10 @@ export class SmallProject extends React.Component {
     super(props);
 
     this.state = { ...props };
-    this.state.isShown = false;
+    this.state.isShown =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
     this.state.componentWidth = Math.min(200, (window.innerWidth - 100) / 2);
     this.state.openModal = false;
   }
@@ -26,11 +29,23 @@ export class SmallProject extends React.Component {
   };
 
   handleShow = () => {
-    this.setState({ isShown: true });
+    if (
+      !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      this.setState({ isShown: true });
+    }
   };
 
   handleHide = () => {
-    this.setState({ isShown: false });
+    if (
+      !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      this.setState({ isShown: false });
+    }
   };
 
   handleResize = () => {
