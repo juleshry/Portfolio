@@ -48,6 +48,7 @@ export class LargeProject extends React.Component {
             component="img"
             image={process.env.PUBLIC_URL + this.state.imageUrl}
             alt={this.state.name}
+            draggable={false}
             sx={{
               width: "150px",
               MozWindowDragging: false,

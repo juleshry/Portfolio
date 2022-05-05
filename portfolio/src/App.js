@@ -10,7 +10,7 @@ import {
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { Appbar } from "./Components/Appbar";
+import { Appbar } from "./Components/Appbar/Appbar";
 import { Tiles } from "./Components/Tiles";
 import { Background } from "./background";
 import { Projects } from "./Components/Projects/Projects";

@@ -7,12 +7,10 @@ import { Link } from "react-router-dom";
 import { DarkModeSwitch } from "./Switch/DarkModeSwitch";
 import { FolderTile } from "./FolderTile";
 import { linkPefix } from "../App";
+import { MeCard } from "./Me/MeCard";
 
 const TileStyle = {
-  paddingRight: 12,
-  paddingLeft: 12,
-  paddingTop: 12,
-  paddingBottom: 12,
+  padding: 12,
 };
 
 export class Tiles extends React.Component {
@@ -69,19 +67,32 @@ export class Tiles extends React.Component {
         marginBottom={3}
       >
         <Grid item style={TileStyle}>
-          <Link to={linkPefix + "/projects"} style={{ textDecoration: "none" }}>
-            <FolderTile
-              text="Projects"
-              color={
-                document.body.className !== "light-theme"
-                  ? "#ffffff"
-                  : "#000000"
-              }
-            />
-          </Link>
+          <MeCard />
         </Grid>
         <Grid item style={TileStyle}>
-          <DarkModeSwitch toggle={this.handleSwitch} />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              height: "100%",
+            }}
+          >
+            <Link
+              to={linkPefix + "/projects"}
+              style={{ textDecoration: "none" }}
+            >
+              <FolderTile
+                text="Projects"
+                color={
+                  document.body.className !== "light-theme"
+                    ? "#ffffff"
+                    : "#000000"
+                }
+              />
+            </Link>
+            <DarkModeSwitch toggle={this.handleSwitch} />
+          </div>
         </Grid>
       </Grid>
     );
