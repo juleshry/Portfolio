@@ -56,9 +56,9 @@ export class MeCard extends React.Component {
           image={process.env.PUBLIC_URL + this.state.imageUrl}
           alt={this.state.name}
           draggable={false}
-          sx={{
-            width: "100%",
+          style={{
             height: "50%",
+            flexShrink: 0,
             MozWindowDragging: false,
           }}
         />
